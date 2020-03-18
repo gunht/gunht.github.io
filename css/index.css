@@ -1,0 +1,25 @@
+body {
+	margin: 0px;
+}
+
+a {
+	font-size: 20px;
+	text-decoration: none;
+}
+
+#header {
+	background-color: gray;
+	padding: 5px 150px;
+
+}
+
+#content {
+	padding: 20px 100px;
+}
+
+#footer {
+	padding: 5px 150px;
+}
+
+
+
