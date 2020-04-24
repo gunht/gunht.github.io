@@ -76,6 +76,14 @@ h2 > a {
 	grid-area: 6/1;
 }
 
+.item7 {
+	grid-area: 1/2;
+}
+
+.item8 {
+	grid-area: 2/2;
+}
+
 .grid a:hover {
 	background-color: #887bd7;
 	color: #262626;
