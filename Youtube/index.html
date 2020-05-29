@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube</title>
+    <link rel="icon" type="image/png" href="img/icon/icon-0.png" sizes="32x32">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="outer-main">
+        <header>
+            <div class="start">
+                <img src="img/icon/icon-4.png" alt="icon">
+                <img src="img/icon/icon-youtube.png" alt="icon">
+            </div>
+            <div class="center">
+                <form action>
+                    <input type="text" placeholder="Tìm kiếm">
+                </form>
+                <span class="keyboard"></span>
+                <button class="search">
+                    <img src="img/icon/icon-1.png" alt="icon search">
+                </button>
+            </div>
+            <div class="end">
+                <img src="img/icon/icon-2.png" alt="icon">
+                <img src="img/icon/icon-3.png" alt="icon">
+                <img src="img/icon/icon-6.png" alt="icon">
+                <div class="avatar"></div>
+            </div>
+        </header>
+
+        <div class="side-bar">
+            <ul>
+                <li class="active">
+                    <span class="img">
+                        <img src="img/icon/icon-side-01.png" alt="icon">
+                    </span>
+                    <span class="text">Trang chủ</span>
+                </li>
+                <li>
+                    <span class="img">
+                        <img src="img/icon/icon-side-02.png" alt="icon">
+                    </span>
+                    <span class="text">Thịnh hành</span>
+                </li>
+                <li>
+                    <span class="img">
+                        <img src="img/icon/icon-side-03.png" alt="icon">
+                    </span>
+                    <span class="text">Kênh đăng ký</span>
+                </li>
+                <hr class="space-side-bar">
+                <li>
+                    <span class="img">
+                        <img src="img/icon/icon-side-04.png" alt="icon">
+                    </span>
+                    <span class="text">Thư viện</span>
+                </li>
+                <li>
+                    <span class="img">
+                        <img src="img/icon/icon-side-05.png" alt="icon">
+                    </span>
+                    <span class="text">Lịch sử</span>
+                </li>
+                <li>
+                    <span class="img">
+                        <img src="img/icon/icon-side-06.png" alt="icon">
+                    </span>
+                    <span class="text">Video của bạn</span>
+                </li>
+                <li>
+                    <span class="img">
+                        <img src="img/icon/icon-side-07.png" alt="icon">
+                    </span>
+                    <span class="text">Xem sau</span>
+                </li>
+                <li>
+                    <span class="img">
+                        <img src="img/icon/icon-side-08.png" alt="icon">
+                    </span>
+                    <span class="text">Video đã thích</span>
+                </li>
+                <hr class="space-side-bar">
+                <h6>KÊNH ĐĂNG KÝ</h6>
+                <li>
+                    <span class="imgsub">
+                        <img src="https://yt3.ggpht.com/a/AATXAJxbbP4RSE461fDoGa16zmITV2xc8xoqGmQ6tQ=s88-c-k-c0xffffffff-no-rj-mo" alt="icon">
+                    </span>
+                    <span class="text">TheEllenShow</span>
+                </li>
+                <li>
+                    <span class="imgsub">
+                        <img src="https://yt3.ggpht.com/a/AATXAJz1yNNjLQGgBzQXAAPad5UKPJ1aNyhqFKpvlg=s88-c-k-c0xffffffff-no-rj-mo" alt="icon">
+                    </span>
+                    <span class="text">VTV24</span>
+                </li>
+                <li>
+                    <span class="imgsub">
+                        <img src="https://yt3.ggpht.com/a/AATXAJyv5XCIO2j4e-lhlJaliv8gMSJqI2kW_Gteeg=s88-c-k-c0xffffffff-no-rj-mo" alt="icon">
+                    </span>
+                    <span class="text">Phạm Huy Hoàng</span>
+                </li>
+                <li>
+                    <span class="imgsub">
+                        <img src="https://yt3.ggpht.com/a/AATXAJzJQ28VJPdIgqPygfUT7IvoMexr49HgoaCAjw=s88-c-k-c0xffffffff-no-rj-mo" alt="icon">
+                    </span>
+                    <span class="text">Phê Phim</span>
+                </li>
+                <li>
+                    <span class="imgsub">
+                        <img src="https://yt3.ggpht.com/a/AATXAJyS9nvLRL3ABhDqZ1EjNf_Rc0-WrmLqwXbi4Q=s88-c-k-c0xffffffff-no-rj-mo" alt="icon">
+                    </span>
+                    <span class="text">NoobFromUA</span>
+                </li>
+                <hr class="space-side-bar">
+                <h6>DỊCH VỤ KHÁC CỦA YOUTUBE</h6>
+                <li>
+                    <span class="img">
+                        <img src="img/icon/icon-side-08.png" alt="icon">
+                    </span>
+                    <span class="text">Trò chơi</span>
+                </li>
+                <li>
+                    <span class="img">
+                        <img src="img/icon/icon-side-08.png" alt="icon">
+                    </span>
+                    <span class="text">Sự kiện trực tiếp</span>
+                </li>
+                <hr class="space-side-bar">
+                <li>
+                    <span class="img">
+                        <img src="img/icon/icon-side-08.png" alt="icon">
+                    </span>
+                    <span class="text">Cài đặt</span>
+                </li>
+                <li>
+                    <span class="img">
+                        <img src="img/icon/icon-side-08.png" alt="icon">
+                    </span>
+                    <span class="text">Lịch sử báo cáo</span>
+                </li>
+                <li>
+                    <span class="img">
+                        <img src="img/icon/icon-side-08.png" alt="icon">
+                    </span>
+                    <span class="text">Trợ giúp</span>
+                </li>
+                <li>
+                    <span class="img">
+                        <img src="img/icon/icon-side-08.png" alt="icon">
+                    </span>
+                    <span class="text">Gửi phản hồi</span>
+                </li>
+                <hr class="space-side-bar">
+                <div class="footer-side-bar">
+                    <span>Giới thiệu</span>
+                    <span>Báo chí</span>
+                    <span>Bản quyền</span>
+                    <span>Liên hệ với chúng tôi</span>
+                    <span>Người sáng tạo</span>
+                    <span>Quảng cáo</span>
+                    <br><br>
+                    <span>Điều khoản</span>
+                    <span>Quyền riêng tư</span>
+                    <span>Chính sách và an toàn</span>
+                    <span>Thử các tính năng mới</span>
+                    <br><br>
+                    <span style="padding-bottom: 15px; font-size: 14px;"> &copy; 2020 Google LLC</span>
+                </div>
+            </ul>
+        </div>
+        <section>
+            <div class="main-content">
+                <div class="section-offer">
+                    <h1>Đề xuất</h1>
+                    <div class="row coofer">
+                        <div class="col-md-3">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/0duWutCV4V0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <div class="content">
+                                <div class="icon-avatar">
+                                    <img src="https://yt3.ggpht.com/a-/AOh14GiG9BWUDreEiFuiCUNe70GCUvOi1PJxzsZ5Zw=s68-c-k-c0x00ffffff-no-rj-mo" alt="avatar">
+                                </div>
+                                <div class="text">
+                                    <h2>TI10 BATTLE PASS - THE INTERNATIONAL 2020 COMPENDIUM DOTA 2</h2>
+                                    <span class="verified">NoobFromUA</span><br>
+                                    <span>378 N lượt xem • 1 ngày trước</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/XJn9JAoX_30" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <div class="content">
+                                <div class="icon-avatar">
+                                    <img src="https://yt3.ggpht.com/a-/AOh14Gh5r7bRAON-8eQ5IMZHf_s6N6V2OjwOfCOC1A=s68-c-k-c0x00ffffff-no-rj-mo" alt="avatar">
+                                </div>
+                                <div class="text">
+                                    <h2>IAN MCKELLEN: MAGNETO Mạnh Mẽ và Hơn Thế Nữa</h2>
+                                    <span class="verified">Phê Phim</span><br>
+                                    <span>66 N lượt xem • 1 ngày trước</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/aC3RUqzlYEM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <div class="content">
+                                <div class="icon-avatar">
+                                    <img src="https://yt3.ggpht.com/a-/AOh14GiGo0Ncc6uH_M8VYvPZ690hjnnMZCIwN6WvzQ=s68-c-k-c0x00ffffff-no-rj-mo" alt="avatar">
+                                </div>
+                                <div class="text">
+                                    <h2>Is this Better Than Drop Shadow? | Crazy Plugins</h2>
+                                    <span class="verified">PiXimperfect</span><br>
+                                    <span>505 N lượt xem • 8 tháng trước</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/6i1CWIaTH60" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <div class="content">
+                                <div class="icon-avatar">
+                                    <img src="https://yt3.ggpht.com/a-/AOh14Ggs4sF3CGuxhQvuT7rzXmHvb0vZe5gXYfgt4g=s68-c-k-c0x00ffffff-no-rj-mo" alt="avatar">
+                                </div>
+                                <div class="text">
+                                    <h2>Hack cùng Code Dạo - Kì 1: SQL Injection</h2>
+                                    <span>Phạm Huy Hoàng</span><br>
+                                    <span>180 N lượt xem • 1 năm trước</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row coofer">
+                        <div class="col-md-3">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/mdG8N-lgrFQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <div class="content">
+                                <div class="icon-avatar">
+                                    <img src="https://yt3.ggpht.com/a-/AOh14Ggs4sF3CGuxhQvuT7rzXmHvb0vZe5gXYfgt4g=s68-c-k-c0x00ffffff-no-rj-mo" alt="avatar">
+                                </div>
+                                <div class="text">
+                                    <h2>Tìm hiểu về ngành Data, AI/Machine Learning cùng anh Cảnh Grab Singapore</h2>
+                                    <span>Phạm Huy Hoàng</span><br>
+                                    <span>3,8 N lượt xem • 1 ngày trước</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/63gRjn4q4_k" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <div class="content">
+                                <div class="icon-avatar">
+                                    <img src="https://yt3.ggpht.com/a-/AOh14GhBATgt1H4Ug8XyyrsiGwjK2VCZ10qra2rgLQ=s68-c-k-c0x00ffffff-no-rj-mo" alt="avatar">
+                                </div>
+                                <div class="text">
+                                    <h2>Final Fantasy X「Suteki Da Ne / Yuna's Theme」Ru's Piano Cover</h2>
+                                    <span class="verified">Ru's Piano Ru味春捲</span><br>
+                                    <span>469 N lượt xem • 3 tháng trước</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/9nOSOYvFnx4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <div class="content">
+                                <div class="icon-avatar">
+                                    <img src="https://yt3.ggpht.com/a-/AOh14Gh5r7bRAON-8eQ5IMZHf_s6N6V2OjwOfCOC1A=s68-c-k-c0x00ffffff-no-rj-mo" alt="avatar">
+                                </div>
+                                <div class="text">
+                                    <h2>TOP 10 PHIM DÀI TẬP HAY NHẤT TRÊN HBO GO</h2>
+                                    <span class="verified">Phê Phim</span><br>
+                                    <span>19 N lượt xem • 3 giờ trước</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/mw5VIEIvuMI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <div class="content">
+                                <div class="icon-avatar">
+                                    <img src="https://yt3.ggpht.com/a-/AOh14Gg9Ir9oc3SBrLxggP1GctYklNFzU-tTOLSOSA=s68-c-k-c0x00ffffff-no-rj-mo" alt="avatar">
+                                </div>
+                                <div class="text">
+                                    <h2>Naomi Scott - Speechless (from Aladdin) (Official Video)</h2>
+                                    <span class="verified">DisneyMusicVEVO</span><br>
+                                    <span>181 Tr lượt xem • 1 năm trước</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- section-offer -->
+                <hr class="space">
+                <div class="section-covid">
+                    <h1>Tin tức về COVID-19</h1>
+                    <div class="row coofer">
+                        <div class="col-md-3">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/GRCO8vdrNMo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <div class="content">
+                                <div class="icon-avatar">
+                                    <img src="https://yt3.ggpht.com/a-/AOh14GhwxRMn9yjmyTd6DoXMOZv2bhxfYLtxvS_ITw=s68-c-k-c0x00ffffff-no-rj-mo" alt="avatar">
+                                </div>
+                                <div class="text">
+                                    <h2>Tin tổng hợp dịch do virus Corona (Covid-19) sáng 27/5 | VTC Now</h2>
+                                    <span>VTC NOW</span><br>
+                                    <span>19 N lượt xem • 4 giờ trước</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/J2vqbQq5q0o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <div class="content">
+                                <div class="icon-avatar">
+                                    <img src="https://yt3.ggpht.com/a-/AOh14Gh-mQwzkfHR2kksbXouEZrQIyT9dnzlyDrwzQ=s68-c-k-c0x00ffffff-no-rj-mo" alt="avatar">
+                                </div>
+                                <div class="text">
+                                    <h2>Tin tức dịch bệnh corona ( Covid-19 ) sáng 27/5 Tin tổng hợp virus corona Việt Nam đại dịch Vũ Hán</h2>
+                                    <span>TIN TỨC 24H ONLINE</span><br>
+                                    <span>12 N lượt xem • 6 tháng trước</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/_8GXVUWR8_Y" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <div class="content">
+                                <div class="icon-avatar">
+                                    <img src="https://yt3.ggpht.com/a-/AOh14GjU2fmtU3fJEESxqr7nwS4ft2lyGehZZz0Lwg=s68-c-k-c0x00ffffff-no-rj-mo" alt="avatar">
+                                </div>
+                                <div class="text">
+                                    <h2>Chiều 25.5: Việt Nam có thêm 1 bệnh nhân nhiễm virus corona, là người trở về từ Pháp</h2>
+                                    <span class="verified">Báo Thanh Niên</span><br>
+                                    <span>253 N lượt xem • 2 ngày trước</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/dLMHgZGa-Qo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <div class="content">
+                                <div class="icon-avatar">
+                                    <img src="https://yt3.ggpht.com/a-/AOh14GhwxRMn9yjmyTd6DoXMOZv2bhxfYLtxvS_ITw=s68-c-k-c0x00ffffff-no-rj-mo" alt="avatar">
+                                </div>
+                                <div class="text">
+                                    <h2>Tin tổng hợp dịch do virus Corona (Covid-19) sáng 26/5 | VTC Now</h2>
+                                    <span>VTC NOW</span><br>
+                                    <span>477 N lượt xem • 1 năm trước</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="button">
+                        <img src="img/icon/icon-main-02.png" alt="icon">
+                    </div>
+                    <div class="row coofer">
+                        <div class="col-md-3">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/CPooxALUPKs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <div class="content">
+                                <div class="icon-avatar">
+                                    <img src="https://yt3.ggpht.com/a-/AOh14Ghz6D_nw3ghEeuxjcrG0d10hSrszNhKGsH74w=s68-c-k-c0x00ffffff-no-rj-mo" alt="avatar">
+                                </div>
+                                <div class="text">
+                                    <h2>Photoshop Manipulation Tutorial // How To Create Aquaman Poster // Easy By Sony Jackson //</h2>
+                                    <span>Sony Jackson</span><br>
+                                    <span>1,1 Tr lượt xem • 1 năm trước</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/KZUzC4eti1I" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <div class="content">
+                                <div class="icon-avatar">
+                                    <img src="https://yt3.ggpht.com/a-/AOh14Ghow02vXlHDrV5wX6oWkmN7m_DB5Qni6XB-7Q=s68-c-k-c0x00ffffff-no-rj-mo" alt="avatar">
+                                </div>
+                                <div class="text">
+                                    <h2>Mozart, Concerto No.3 in D major Elisey Mysin/cadence Elisey Mysin/ Young pianist and composer</h2>
+                                    <span>Elisey Mysin</span><br>
+                                    <span>19 Tr lượt xem • 9 tháng trước</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/KKc_RMln5UY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <div class="content">
+                                <div class="icon-avatar">
+                                    <img src="https://yt3.ggpht.com/a-/AOh14GjFiiUOocbd7puz8oA9CyXy3tihDqgskPYdG4ETqg=s88-c-k-c0x00ffffff-no-rj" alt="avatar">
+                                </div>
+                                <div class="text">
+                                    <h2>Đen - Lối Nhỏ ft. Phương Anh Đào (M/V)</h2>
+                                    <span class="artist">Đen Vâu Official</span><br>
+                                    <span>63 Tr lượt xem • 7 tháng trước</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/ckTdQT_lFCM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <div class="content">
+                                <div class="icon-avatar">
+                                    <img src="https://yt3.ggpht.com/a-/AOh14Gic5RUBUwh1Apd0viSoBXcNB7gwiaQF5spYSQ=s68-c-k-c0x00ffffff-no-rj-mo" alt="avatar">
+                                </div>
+                                <div class="text">
+                                    <h2>stop focusing on what goes wrong :)</h2>
+                                    <span>andy ở canada</span><br>
+                                    <span>9,2 N lượt xem • 1 ngày trước</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- section-covid -->
+                <hr class="space">
+                <div class="section-byt">
+                    <div class="img">
+                        <img src="https://www.gstatic.com/youtube/img/promos/growth/1a88f3ce3c9ef2d34a05cf83e31e02c85c8298937c65bfd9238c6d8098937559_140x140.png" alt="avatar BYT">
+                    </div>
+                    <div class="content">
+                        <h3>COVID-19</h3>
+                        <span>Cập nhật thông tin mới nhất từ Bộ Y Tế về dịch COVID-19</span>
+                        <span>Nổi bật</span> <br>
+                        <div class="more">
+                            XEM THÊM
+                            <img src="img/icon/icon-main-03.png" alt>
+                        </div>
+                    </div>
+                </div>
+                <!-- section-byt -->
+                <hr class="space">
+                <div class="section-covid">
+                    <div class="row coofer">
+                        <div class="col-md-3">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/Tr_rg1M53bk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <div class="content">
+                                <div class="icon-avatar">
+                                    <img src="https://yt3.ggpht.com/a-/AOh14GiG9BWUDreEiFuiCUNe70GCUvOi1PJxzsZ5Zw=s68-c-k-c0x00ffffff-no-rj-mo" alt="avatar">
+                                </div>
+                                <div class="text">
+                                    <h2>NIGMA vs Aggressive Mode - GREAT GAME! - ESL One Birmingham 2020 DOTA 2</h2>
+                                    <span class="verified">NoobFromUA</span><br>
+                                    <span>17 N lượt xem • 4 giờ trước</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/3_BfecB1Dqk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <div class="content">
+                                <div class="icon-avatar">
+                                    <img src="https://yt3.ggpht.com/a-/AOh14Ggs4sF3CGuxhQvuT7rzXmHvb0vZe5gXYfgt4g=s68-c-k-c0x00ffffff-no-rj-mo" alt="avatar">
+                                </div>
+                                <div class="text">
+                                    <h2>Hack cùng Code Dạo - Kì 2: XSS - Cross-Site Scripting</h2>
+                                    <span>Phạm Huy Hoàng</span><br>
+                                    <span>30 N lượt xem • 1 năm trước</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/dkhsfqfsUOs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <div class="content">
+                                <div class="icon-avatar">
+                                    <img src="https://yt3.ggpht.com/a-/AOh14Gg3DrD7kLinnztfMV09psU6P3s8cVaI6MI8Cw=s68-c-k-c0x00ffffff-no-rj-mo" alt="avatar">
+                                </div>
+                                <div class="text">
+                                    <h2>千と千尋の神隠し 3曲 メドレー 久石譲 Spirited Away [ピアノ]</h2>
+                                    <span class="verified">Pan Piano</span><br>
+                                    <span>1,1 Tr lượt xem • 1 tháng trước</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/iYN37exgyFY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <div class="content">
+                                <div class="icon-avatar">
+                                    <img src="https://yt3.ggpht.com/a-/AOh14GhxNRAS7-LeCXG3bsIqxf3SsSD5L2gnSMDvgg=s68-c-k-c0x00ffffff-no-rj-mo" alt="avatar">
+                                </div>
+                                <div class="text">
+                                    <h2>Ấn Tượng Ban Đầu Về MacBook Pro 13 (2020): CẨN THẬN!!!</h2>
+                                    <span class="verified">ThinkView</span><br>
+                                    <span>42 N lượt xem • 1 tuần trước</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- section-covid -->
+                <hr class="space">
+                <div class="section-newfeed">
+                    <h1>Các bài đăng mới nhất trên YouTube</h1>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="cnew">
+                                <div class="title-cnew">
+                                    <div class="img">
+                                        <img src="https://yt3.ggpht.com/a/AATXAJwDKB7gY5cSzdwo5w3XPsRHViN4xRv2g4jxpg=s48-c-k-c0x00ffffff-no-rj-mo" alt="avatar">
+                                    </div>
+                                    <span>andy ở canada • 4 giờ trước</span>
+                                </div>
+                                <div class="content-cnew">
+                                    <div class="text">
+                                        <span>Hi cả nhà ^^ Hiện tại andy đang tuyển sinh một khoá học IELTS Online vào ngày 8/6 này. Nói qua một chút, đây sẽ làm một khoá học overall 4 kỹ năng IELTS để giúp các bạn học xong khoá học có thể nắm vững về kì thi này, khoá học sẽ học qua Zoom vào 8h tối thứ 2-4-6 với thời lượng 25 buổi. Bạn nào muốn học IELTS cùng andy thì có thể đọc thêm thông tin chi tiết khoá học tại website của andy nha: </span>
+                                    </div>
+                                    <div class="img">
+                                        <img src="https://lh3.googleusercontent.com/14vtE83bOuifr6uR4Bf55db6nbpUAbf4PYk7P1gNxRBM-3YdvFpumnnz0dkWSbMWWGEnS6lm_WLsJA=s788-c-fcrop64=1,14b30000eb4cffff-nd" alt="img">
+                                    </div>
+                                </div>
+                                <div class="icon-cnew">
+                                    <div class="start">
+                                        <img src="img/icon/icon-side-08.png" alt="icon">
+                                        <span>163</span>
+                                        <img src="img/icon/icon-side-08.png" alt="icon">
+                                    </div>
+                                    <div class="end">
+                                        <img src="img/icon/icon-main-05.png" alt="icon">
+                                        <span>15</span>
+                                        <img src="img/icon/icon-main-01.png" alt="icon">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="cnew">
+                                <div class="title-cnew">
+                                    <div class="img">
+                                        <img src="https://yt3.ggpht.com/a/AATXAJwYIu5koralkF2U69E4ivYe-7reWV-HM1gm0g=s48-c-k-c0x00ffffff-no-rj-mo" alt="avatar">
+                                    </div>
+                                    <span>Ru's Piano Ru味春捲 • 3 giờ trước</span>
+                                </div>
+                                <div class="content-cnew">
+                                    <div class="text">
+                                        <span>今日新曲提示: <br> 看得出來我穿誰的衣服嗎? (๑•̀ω•́)ノ <br> Today’s new video hint: <br> Can you guess who I cosplay?</span>
+                                    </div>
+                                    <div class="img">
+                                        <img src="https://lh3.googleusercontent.com/EOksOPlGRyTBzIZfDW-b1QOF0CAb6Mx-Tu5jmhubA1h1-qjLfHmCs87G4GVWrV5OVysi5LmxBQig2Q=s1891-c-fcrop64=1,00000ae6ffffcb3a-nd" alt="img">
+                                    </div>
+                                </div>
+                                <div class="icon-cnew">
+                                    <div class="start">
+                                        <img src="img/icon/icon-side-08.png" alt="icon">
+                                        <span>1,9 N</span>
+                                        <img src="img/icon/icon-side-08.png" alt="icon">
+                                    </div>
+                                    <div class="end">
+                                        <img src="img/icon/icon-main-05.png" alt="icon">
+                                        <span>207</span>
+                                        <img src="img/icon/icon-main-01.png" alt="icon">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="cnew">
+                                <div class="title-cnew">
+                                    <div class="img">
+                                        <img src="https://yt3.ggpht.com/a/AATXAJyZGeDaNmYITvQNBpCG-AFERxny3OO8YLclQg=s48-c-k-c0x00ffffff-no-rj-mo" alt="avatar">
+                                    </div>
+                                    <span>ThinkView • 5 giờ trước</span>
+                                </div>
+                                <div class="content-cnew">
+                                    <div class="text">
+                                        <span>Tối nay MSI Bravo 15 sẽ chính thức được ra mắt thị trường Việt Nam. <br>
+                                            Anh em có muốn sở hữu chiếc máy này không nào? Đặt lịch ngay để theo dõi livestream ra mắt Bravo 15 trên fanpage MSI nhé:
+                                             </span>
+                                    </div>
+                                    <div class="img">
+                                        <img src="https://lh3.googleusercontent.com/cyXE4uezSl2XXi1Y-Aj-r7Kb7361Jdm8nA5pB_pLEf5U1wIaml42NOnzEt238g_FFtkdlhUQDPIrzQ=s2252-c-fcrop64=1,2f4a0000bf6affff-nd" alt="img">
+                                    </div>
+                                </div>
+                                <div class="icon-cnew">
+                                    <div class="start">
+                                        <img src="img/icon/icon-side-08.png" alt="icon">
+                                        <span>35</span>
+                                        <img src="img/icon/icon-side-08.png" alt="icon">
+                                    </div>
+                                    <div class="end">
+                                        <img src="img/icon/icon-main-05.png" alt="icon">
+                                        <span>15</span>
+                                        <img src="img/icon/icon-main-01.png" alt="icon">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- section-newfeed -->
+                <div class="button">
+                    <img src="img/icon/icon-main-02.png" alt="icon">
+                </div>
+                <div class="section-end">
+                    <div class="row coofer">
+                        <div class="col-md-3">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/EkATv6G7_9s" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <div class="content">
+                                <div class="icon-avatar">
+                                    <img src="https://yt3.ggpht.com/a-/AOh14Gh5r7bRAON-8eQ5IMZHf_s6N6V2OjwOfCOC1A=s68-c-k-c0x00ffffff-no-rj-mo" alt="avatar">
+                                </div>
+                                <div class="text">
+                                    <h2>Phê Phim News: PHIM SINH TỒN VIỆT NAM ĐẦU TIÊN TUNG TRAILER | ĐẠO DIỄN LOGAN LÀM INDIANA JONES 5</h2>
+                                    <span class="verified">Phê Phim</span><br>
+                                    <span>6,4 N lượt xem • 1 giờ trước</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/Ogx8E-kWYB8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <div class="content">
+                                <div class="icon-avatar">
+                                    <img src="https://yt3.ggpht.com/a-/AOh14GgcXmaMJufbeOWED3HgIrggyMLj1PFaTmkWAA=s68-c-k-c0x00ffffff-no-rj-mo" alt="avatar">
+                                </div>
+                                <div class="text">
+                                    <h2>Việt Nam mở Apple Store: iPhone giá sẽ rẻ?</h2>
+                                    <span class="verified">Vật Vờ Studio</span><br>
+                                    <span>9,5 N lượt xem • 1 giờ trước</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/TNNgDpwv71I" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <div class="content">
+                                <div class="icon-avatar">
+                                    <img src="https://yt3.ggpht.com/a-/AOh14GhBATgt1H4Ug8XyyrsiGwjK2VCZ10qra2rgLQ=s68-c-k-c0x00ffffff-no-rj-mo" alt="avatar">
+                                </div>
+                                <div class="text">
+                                    <h2>Final Fantasy X OST「To Zanarkand」ver.2.0 | Ru's Piano Cover</h2>
+                                    <span class="verified">Ru's Piano Ru味春捲</span><br>
+                                    <span>10 N lượt xem • 1 giờ trước</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/2xzt4aQEgP0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <div class="content">
+                                <div class="icon-avatar">
+                                    <img src="https://yt3.ggpht.com/a-/AOh14GiJ_Q1Xt0R4GuNzEp90smKeDA_maxtqX1F8Dg=s68-c-k-c0x00ffffff-no-rj-mo" alt="avatar">
+                                </div>
+                                <div class="text">
+                                    <h2>How to make your PHOTOS look CINEMATIC FAST using LUTS in Photoshop!</h2>
+                                    <span class="verified">Peter McKinnon</span><br>
+                                    <span>1,5 Tr lượt xem • 3 năm trước</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row coofer">
+                        <div class="col-md-3">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/x333KJq5e3Y" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <div class="content">
+                                <div class="icon-avatar">
+                                    <img src="https://yt3.ggpht.com/a-/AOh14GhTjq27fiPlxUaaPNCUgnknroRUT8Y5db23YA=s68-c-k-c0x00ffffff-no-rj-mo" alt="avatar">
+                                </div>
+                                <div class="text">
+                                    <h2>NEW EPIC PUDGE SET — ARCANA + ULTRA RARE TI10 IMMORTAL pro gameplay</h2>
+                                    <span class="verified">dotatvru</span><br>
+                                    <span>190 lượt xem • 10 phút trước</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/sWMsNk_SPa0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <div class="content">
+                                <div class="icon-avatar">
+                                    <img src="https://yt3.ggpht.com/a-/AOh14Gg3DrD7kLinnztfMV09psU6P3s8cVaI6MI8Cw=s68-c-k-c0x00ffffff-no-rj-mo" alt="avatar">
+                                </div>
+                                <div class="text">
+                                    <h2>初音ミク 千本桜 Senbonzakura [ピアノ]</h2>
+                                    <span class="verified">Pan Piano</span><br>
+                                    <span>1 Tr lượt xem • 6 tháng trước</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/gttNFh4vEA4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <div class="content">
+                                <div class="icon-avatar">
+                                    <img src="https://yt3.ggpht.com/a-/AOh14GhBATgt1H4Ug8XyyrsiGwjK2VCZ10qra2rgLQ=s68-c-k-c0x00ffffff-no-rj-mo" alt="avatar">
+                                </div>
+                                <div class="text">
+                                    <h2>DRAGON BALL PIANO MEDLEY - 30,000 Subscribers Special - Ru's Piano</h2>
+                                    <span class="verified">Ru's Piano Ru味春捲</span><br>
+                                    <span>10 Tr lượt xem • 11 tháng trước</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/pNGEqGvz-ds" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <div class="content">
+                                <div class="icon-avatar">
+                                    <img src="https://yt3.ggpht.com/a-/AOh14GhFTSiBWORT3d2qq8wCB5k9Co2T0GozzGXSPA=s68-c-k-c0x00ffffff-no-rj-mo" alt="avatar">
+                                </div>
+                                <div class="text">
+                                    <h2>Shape of You - Ed sheeran / Marimba Cover</h2>
+                                    <span>YUNI Marimba 유니 마림바</span><br>
+                                    <span>10 Tr lượt xem • 2 năm trước</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row coofer">
+                        <div class="col-md-3">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/eHpqXY_5aiw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <div class="content">
+                                <div class="icon-avatar">
+                                    <img src="https://yt3.ggpht.com/a-/AOh14Gh4HvfBGxBs4SH6pru5BXS5gW4y2E-tLgGLjA=s68-c-k-c0x00ffffff-no-rj-mo" alt="avatar">
+                                </div>
+                                <div class="text">
+                                    <h2>All Lockdown Scenes | Transformers Age of Extinction Part 1</h2>
+                                    <span>DarthMenace</span><br>
+                                    <span>685 N lượt xem • 6 tháng trước</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/95hC5Q0oyOE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <div class="content">
+                                <div class="icon-avatar">
+                                    <img src="https://yt3.ggpht.com/a-/AOh14GiG9BWUDreEiFuiCUNe70GCUvOi1PJxzsZ5Zw=s68-c-k-c0x00ffffff-no-rj-mo" alt="avatar">
+                                </div>
+                                <div class="text">
+                                    <h2>OG vs WINSTRIKE - EU vs CIS - ESL One Birmingham 2020 DOTA 2</h2>
+                                    <span class="verified">NoobFromUA</span><br>
+                                    <span>102 N lượt xem • 12 giờ trước</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/1d2HfH8EBsk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <div class="content">
+                                <div class="icon-avatar">
+                                    <img src="https://yt3.ggpht.com/a-/AOh14Ggwt8M3jorlAYHyQ8_LgJ-9T7ONoJLEZ5jGJQ=s68-c-k-c0x00ffffff-no-rj-mo" alt="avatar">
+                                </div>
+                                <div class="text">
+                                    <h2>Gió Vẫn Hát - Long Phạm | Nghe Thôi Đừng Khóc Nhé</h2>
+                                    <span class="verified">Acoustic Top Hit</span><br>
+                                    <span>30 N lượt xem • 1 năm trước</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/M-kEvNz0ubI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <div class="content">
+                                <div class="icon-avatar">
+                                    <img src="https://yt3.ggpht.com/a-/AOh14Ghu914h14-SZJNZ3kFVcgJdikSGpOY9g4W7rg=s68-c-k-c0x00ffffff-no-rj-mo" alt="avatar">
+                                </div>
+                                <div class="text">
+                                    <h2>Lập trình game Slither.io (Javascript slither.io game live coding)</h2>
+                                    <span>Lập trình viên TV</span><br>
+                                    <span>12 N lượt xem • 1 tuần trước</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row cooferend">
+                        <div class="col-md-3">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/3_BfecB1Dqk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <div class="content">
+                                <div class="icon-avatar">
+                                    <img src="" alt="avatar">
+                                </div>
+                                <div class="text">
+                                    <h2>HackScripting</h2>
+                                    <span>Phạm</span><br>
+                                    <span>30 N lượt xem • 1 năm trước</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/G95kfkzCJv0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <div class="content">
+                                <div class="icon-avatar">
+                                    <img src="https://yt3.ggpht.com/a-/AOh14GiR2euZzv9BRNlpWlltgtehF5BT78FLVLOKGw=s68-c-k-c0x00ffffff-no-rj-mo" alt="avatar">
+                                </div>
+                                <div class="text">
+                                    <h2>Sao người ta chỉ nhận ra Nấm thui ???</h2>
+                                    <span>AlexD Music Insight</span><br>
+                                    <span>30 N lượt xem • 1 ngày trước</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/vMwe55mVd3o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <div class="content">
+                                <div class="icon-avatar">
+                                    <img src="https://yt3.ggpht.com/a-/AOh14GgcXmaMJufbeOWED3HgIrggyMLj1PFaTmkWAA=s68-c-k-c0x00ffffff-no-rj-mo" alt="avatar">
+                                </div>
+                                <div class="text">
+                                    <h2>Mình đã nghiện TikTok vì sản phẩm này!</h2>
+                                    <span class="verified">Vật Vờ Studio</span><br>
+                                    <span>30 N lượt xem • 1 ngày trước</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/h-th6_RbX-g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <div class="content">
+                                <div class="icon-avatar">
+                                    <img src="https://yt3.ggpht.com/a-/AOh14GhTjq27fiPlxUaaPNCUgnknroRUT8Y5db23YA=s68-c-k-c0x00ffffff-no-rj-mo" alt="avatar">
+                                </div>
+                                <div class="text">
+                                    <h2>FIRST PRO Wraith King ARCANA gameplay by Mason</h2>
+                                    <span class="verified">dotatvru</span><br>
+                                    <span>109 N lượt xem • 1 ngày trước</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>
