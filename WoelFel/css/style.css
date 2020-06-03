@@ -133,6 +133,41 @@ body {
     margin: 0;
 }
 
+.title-main-content .right {
+    display: flex;
+    align-items: center;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+.btn-title {
+    display: flex;
+    border: 1px solid #DEE1E6;
+    border-radius: 100px;
+    width: 250px;
+    height: 40px;
+}
+
+.btn-toggle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 125px;
+    height: 40px;
+    border-radius: 100px;
+    color: #94969A;
+    cursor: pointer;
+}
+
+input[type="radio"].toggle:checked+label {
+    cursor: default;
+    color: #fff;
+    background: #507BFC;
+    box-shadow: 0px 10px 20px rgba(80, 123, 252, 0.5);
+}
+
 
 /* --------------outer-card---------------- */
 
@@ -187,38 +222,6 @@ body {
 
 .btn-Add:hover {
     color: #fff;
-}
-
-.title-btn {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 250px;
-    height: 40px;
-    border: 1px solid #DEE1E6;
-    border-radius: 100px;
-    cursor: pointer;
-}
-
-.btn-all {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 125px;
-    height: 40px;
-    background: #507BFC;
-    color: #fff;
-    border-radius: 100px;
-    box-shadow: 0px 10px 20px rgba(80, 123, 252, 0.5);
-}
-
-.btn-myteam {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 125px;
-    height: 40px;
-    color: #94969A;
 }
 
 
