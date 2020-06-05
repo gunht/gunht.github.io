@@ -20,7 +20,9 @@ a {
     color: black;
 }
 
-a:visited {
+a:visited,
+a:active,
+a:link {
     color: black;
 }
 
@@ -41,9 +43,36 @@ a:visited {
 }
 
 .menu a {
-    padding: 0 15px;
+    padding: 0 0 0 40px;
     width: 100%;
     line-height: 50px;
+    font-style: italic;
+}
+
+a.home,
+.list {
+    display: flex;
+    align-items: center;
+    font-style: unset;
+    font-size: 17px;
+    padding: 0 0 0 15px;
+    font-weight: bold;
+}
+
+.list {
+    line-height: 40px;
+}
+
+.menu a img,
+.list img {
+    width: 22px;
+    height: 22px;
+    margin-right: 7px;
+    filter: invert(100%);
+}
+
+.menu a:hover img {
+    filter: invert(0%);
 }
 
 .menu a:hover,
@@ -79,7 +108,7 @@ a.active {
     font-family: 'Painttext2';
     top: 35px;
     left: calc(50% - 97.575px);
-    color: antiquewhite;
+    color: #F3E6B9;
     font-size: 60px;
     transform: rotate(-3deg);
 }

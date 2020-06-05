@@ -9,12 +9,18 @@
     <link rel="stylesheet" href="./css/font.css">
     <link href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="icon" href="./img/icon.png">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 </head>
 
 <body>
     <header>
         <div class="background">
-            <img src="./img/background.jpg" alt="Cổng trào Quảng Ninh">
+            <img src="./img/background.jpg" alt="Vịnh Hạ long trên cao">
+        </div>
+        <div class="nav-bar">
+            <a href="#" class="active">Trang chủ</a>
+            <a href="#list">Danh sách</a>
+            <a href="#about">Giới thiệu</a>
         </div>
         <span class="text-header-1">Welcome to</span>
         <span class="text-header-2">Ha Long</span>
@@ -22,79 +28,123 @@
     </header>
 
     <section>
-        <div class="card">
-            <div class="thumbnail">
-                <a href="./page1.html">
-                    <img src="./img/anh01.jpg" alt="Bai-Tu-Long-Bay">
-                </a>
-            </div>
-            <div class="name">
-                <a href="./page1.html">
+        <div class="about-content" id="about">
+            <h1>Một vài nét về Hạ Long</h1>
+            <p><b>Hạ Long</b> là thành phố tỉnh lỵ của tỉnh Quảng Ninh, Việt Nam.</p>
+            <p>Thành phố Hạ Long được thành lập ngày 27 tháng 12 năm 1993 trên cơ sở toàn bộ diện tích và dân số của thị xã Hồng Gai cũ. Ngày 10 tháng 10 năm 2013, thành phố được công nhận là đô thị loại I.</p>
+            <p class="ul">Thành phố Hạ Long nằm ở trung tâm của tỉnh Quảng Ninh, có vị trí địa lý:</p>
+            <ul>
+                <li>Phía đông giáp thành phố Cẩm Phả</li>
+                <li>Phía tây giáp thành phố Uông Bí và thị xã Quảng Yên</li>
+                <li>Phía bắc giáp huyện Sơn Động, tỉnh Bắc Giang và huyện Ba Chẽ</li>
+                <li>Phía nam giáp huyện Cát Hải, thành phố Hải Phòng và vịnh Hạ Long.</li>
+            </ul>
+            <p>Thành phố Hạ Long có địa hình đa dạng và phức tạp, đây cũng là một trong những khu vực hình thành lâu đời nhất trên lãnh thổ Việt Nam, địa hình ở đây bao gồm cả đồi núi, thung lũng, vùng ven biển và hải đảo, được chia thành 3 vùng rõ rệt gồm
+                có: Vùng đồi núi bao bọc phía bắc và đông bắc, vùng ven biển ở phía nam quốc lộ 18A cuối cùng là vùng hải đảo.</p>
+            <p>Trong đó, vùng đồi núi bao bọc phía bắc và đông bắc, với độ cao trung bình từ 150 mét đến 250 mét, chạy dài từ Yên Lập đến Hà Tu, đỉnh cao nhất là 504 mét. Dãy đồi núi này thấp dần về phía biển, độ dốc trung bình từ 15-20%, xen giữa là các
+                thung lũng nhỏ hẹp. thứ hai là vùng ven biển ở phía nam quốc lộ 18A, độ cao trung bình từ 0.5 đến 5 mét. cuối cùng là vùng hải đảo bao gồm toàn bộ vùng vịnh, với gần hòn đảo lớn nhỏ, chủ yếu là đảo đá. Kết cấu địa chất của thành phố Hạ
+                Long chủ yếu là đất sỏi sạn, cuội sỏi, cát kết, cát sét… ổn định và có cường độ chịu tải cao, từ 2.5 đến 4.5 kg/cm², thuận lợi cho việc xây dựng các công trình. Khoáng sản chủ yếu là than đá và nguyên vật liệu xây dựng.</p>
+            <h2>Dân cư</h2>
+            <p>Năm 2016, thành phố Hạ Long ngoài dân tộc Kinh chiếm đa số còn có 15 dân tộc khác gồm: Tày, Hoa, Cao Lan, Dao, Sán Dìu, Mường, Thái, Nùng, Hán, Thổ, PaKo, Sán Chỉ, Thanh Y, Thái Thổ, H Mông với 830 nhân khẩu sống chủ yếu ở các phường Hà Phong,
+                Đại Yên, Việt Hưng, Hà Khánh. Dân số toàn thành phố năm 2018 là 274.000-305.000 người.</p>
+            <h2>Ẩm thực</h2>
+            <p>Ẩm thực Hạ Long là một trong những yếu tố đặc trưng của thành phố này. Các món ăn ở đây chủ yếu được chế biến từ hải sản nhưng theo những phương pháp truyền thống của dân miền biển và bằng những loài hải sản độc đáo mà nhiều người còn chưa
+                được nhìn thấy bao giờ. Ví dụ như ngán là một loài nhuyễn thể chỉ sống ở Quảng Ninh. Ngán rất bổ dưỡng và chế biến được nhiều món ăn ngon khác nhau như ngán luộc, ngán nướng, gỏi ngán, cháo ngán, bún ngán. Mỗi món ngán được chế biến theo
+                những cách khác nhau lại có hương vị riêng.</p>
+            <p>Ngoài ra còn rất nhiều đặc sản khác mà du khách không thể bỏ qua khi đến Hạ Long như: chả mực (ăn với xôi, bánh cuốn), canh hà, cà sáy (cà sáy là con vịt lai ngan), sam Hạ Long, sò huyết, ruốc (Ruốc lỗ là một loài thuộc họ bạch tuộc nhưng
+                chỉ nhỏ bằng ngón chân cái đứa trẻ), tu hài, tôm hùm, bề bề, sá sùng, cù kỳ (cù kỳ là một loại cua biển có hai càng rất to, chân có nhiều lông, thịt chắc và rất thơm), ghẹ, hàu, mực...</p>
+            <p>Các phố ẩm thực của Hạ Long thu hút đông người dân và du khách: phố Giếng Đồn, đường Trần Quốc Nghiễn,...</p>
+            <h2>Du lịch</h2>
+            <p>Hạ Long được mệnh danh là thành phố du lịch, trung tâm du lịch lớn của Việt Nam. Năm 2015 số du khách đến Hạ Long đạt trên 6 triệu lượt người. Vịnh Hạ Long đã được UNESCO công nhận là Di sản thiên nhiên thế giới 2 lần. Ngoài ra vào lúc 2 giờ
+                của ngày 12 tháng 11 năm 2012 (theo giờ Việt Nam), vịnh Hạ Long được tổ chức New7Wonders tuyên bố là một trong bảy kỳ quan thiên nhiên thế giới mới. Hạ Long đã được nhận Cúp quốc gia về môi trường là Thành phố xanh - sạch - đẹp.</p>
+            <p>Gắn liền với vịnh Hạ Long, các phường Bãi Cháy, Tuần Châu, Hùng Thắng đang là vùng phát triển các khách sạn nhà hàng và xây dựng các công trình du lịch. Hạ Long có hàng trăm khách sạn lớn nhỏ với nhiều khách sạn 4, 5 sao, trang thiết bị đầy
+                đủ và hiện đại, đáp ứng nhu cầu của khách quốc tế và nội địa.</p>
+            <p>Các bãi tắm Hạ Long, Tuần Châu ngày càng được tu bổ, phát triển. Bên bờ Tây thành phố (Hòn Gai) đang dự kiến xây dựng 2 bãi tắm nhân tạo phục vụ dân cư thành phố.</p>
+            <p>Tập đoàn Sun Group đang xây dựng Công viên Sun World Ha Long Park lớn nhất Việt Nam tại Bãi Cháy và Hòn Gai. Ngoài ra còn rất nhiều các hạng mục du lịch đẳng cấp của các tập đoàn lớn trong và ngoài nước như Vin Group, FLC,...</p>
+            <p>Ngoài vịnh, với gần 30 hang động đã được phát hiện, các hang động Thiên Cung, Hòn Đũa, Ðầu Gỗ, hang Sửng Sốt đã được đưa vào phục vụ du lịch nhiều năm.</p>
+            <p>Cụm di tích lịch sử và danh thắng ở trung tâm thành phố bao gồm Núi Bài Thơ, Đền Thờ Đức Ông Đông Hải Đại Vương Trần Quốc Nghiễn, Chùa Long Tiên ở bên núi Bài Thơ. Các địa chỉ lịch sử, các sinh hoạt văn hoá và sinh cảnh, các đồi thông, các
+                công viên thành phố đang được khai thác để đón hàng triệu khách trong những năm tới.</p>
+        </div>
+        <div class="list-content" id="list">
+            <h1>Một vài địa điểm du lịch</h1>
+            <div class="list-border">
+                <div class="card">
+                    <div class="thumbnail">
+                        <a href="./page1.html">
+                            <img src="./img/anh01.jpg" alt="Bai-Tu-Long-Bay">
+                        </a>
+                    </div>
+                    <div class="name">
+                        <a href="./page1.html">
                         Vịnh Bái Tử Long
                     </a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="thumbnail">
-                <a href="/page2.html">
-                    <img src="./img/anh02.jpg" alt="Cave-Sung-Sot">
-                </a>
-            </div>
-            <div class="name">
-                <a href="/page2.html">
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="thumbnail">
+                        <a href="./page2.html">
+                            <img src="./img/anh02.jpg" alt="Cave-Sung-Sot">
+                        </a>
+                    </div>
+                    <div class="name">
+                        <a href="./page2.html">
                         Hang Sửng Sốt
                     </a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="thumbnail">
-                <a href="/page3.html">
-                    <img src="./img/anh03.jpg" alt="Bai-Tu-Long-Bay">
-                </a>
-            </div>
-            <div class="name">
-                <a href="/page3.html">
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="thumbnail">
+                        <a href="./page3.html">
+                            <img src="./img/anh03.jpg" alt="Bai-Tu-Long-Bay">
+                        </a>
+                    </div>
+                    <div class="name">
+                        <a href="./page3.html">
                         Động Thiên Cung
                     </a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="thumbnail">
-                <a href="./page4.html">
-                    <img src="./img/anh04.jpg" alt="Bai-Tu-Long-Bay">
-                </a>
-            </div>
-            <div class="name">
-                <a href="/page4.html">
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="thumbnail">
+                        <a href="./page4.html">
+                            <img src="./img/anh04.jpg" alt="Bai-Tu-Long-Bay">
+                        </a>
+                    </div>
+                    <div class="name">
+                        <a href="./page4.html">
                         Đảo Và Bãi Tắm Ngọc Vừng
                     </a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="thumbnail">
-                <a href="./page5.html">
-                    <img src="./img/anh05.jpg" alt="Bai-Tu-Long-Bay">
-                </a>
-            </div>
-            <div class="name">
-                <a href="/page5.html">
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="thumbnail">
+                        <a href="./page5.html">
+                            <img src="./img/anh05.jpg" alt="Bai-Tu-Long-Bay">
+                        </a>
+                    </div>
+                    <div class="name">
+                        <a href="./page5.html">
                     Đảo Minh Châu
                     </a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="thumbnail">
-                <a href="./page6.html">
-                    <img src="./img/anh06.jpg" alt="Bai-Tu-Long-Bay">
-                </a>
-            </div>
-            <div class="name">
-                <a href="./page6.html">
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="thumbnail">
+                        <a href="./page6.html">
+                            <img src="./img/anh06.jpg" alt="Bai-Tu-Long-Bay">
+                        </a>
+                    </div>
+                    <div class="name">
+                        <a href="./page6.html">
                         Sun World Hạ Long Park
                     </a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
+    <div id="upArrow" onclick="scrollToTop()"></div>
+    <script src="./js/script.js"></script>
 
 </body>
 
