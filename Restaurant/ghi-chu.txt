@@ -1,0 +1,7 @@
+font-thuong: 
+font-thuong: 'Josefin Sans', sans-serif;
+font-nghieng: 'Miniver', cursive;
+font-title: 'caviar_dreams', sans-serif;
+color: #c9ab81;
+<i class="fad fa-quote-left"></i>
+<i class="fad fa-quote-right"></i>

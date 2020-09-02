@@ -1,0 +1,404 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 16px;
+    color: black;
+    background: gray;
+}
+
+a {
+    text-decoration: none;
+    color: #E4E4E4;
+}
+
+li {
+    list-style: none;
+}
+
+.space {
+    height: 50px;
+    border: none;
+    margin: 0;
+}
+
+.clear {
+    clear: both;
+}
+
+
+/*---------------------HEADER---------------------*/
+
+.container {
+    position: relative;
+    margin: auto;
+    letter-spacing: 0.3;
+}
+
+.background-menu {
+    position: relative;
+    background-image: url(../images/kitchen.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 550px;
+    margin: auto;
+    z-index: -100;
+    transition: 5s all;
+    animation: kitchen 3s ease;
+    overflow: hidden;
+}
+
+.background-menu::before {
+    content: "";
+    background-image: url(../images/kitchen.jpg);
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: blur(3px);
+    transition: 5s all;
+    animation: kitchen 3s ease;
+    overflow: hidden;
+}
+
+@keyframes kitchen {
+    0% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.background-content {
+    position: absolute;
+    top: 210px;
+    left: 35%;
+}
+
+.background-content h1 {
+    font-size: 70px;
+    color: white;
+    letter-spacing: 10px;
+}
+
+.background-content h1 i {
+    font-size: 20px;
+    vertical-align: top;
+}
+
+
+/*------------------MENU------------------------*/
+
+.nav-menu-container {
+    position: absolute;
+    width: 100%;
+    height: 90px;
+    top: 0;
+}
+
+.nav-menu {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    box-shadow: inset 0px 90px 0px 0px rgba(0, 0, 0, 0.3);
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+.nav-menu img {
+    position: absolute;
+    top: 0;
+    left: 25px;
+}
+
+
+/*-------------------LEFT----------------------*/
+
+.nav-menu-left {
+    margin: 0;
+    padding-left: 160px;
+    text-decoration: none;
+    list-style: none;
+}
+
+.nav-menu-left>li {
+    float: left;
+}
+
+.nav-menu-left>li>a {
+    line-height: 90px;
+}
+
+.nav-menu-left li {
+    position: relative;
+}
+
+.nav-menu-left li:hover a,
+a.active {
+    color: #c9ab81;
+}
+
+.nav-menu-left li:hover ul {
+    display: block;
+}
+
+.nav-menu-left li a {
+    display: inline-block;
+    padding: 0 15px;
+}
+
+.nav-menu-left .sub-menu {
+    position: absolute;
+    display: none;
+    z-index: 2;
+    padding: 0;
+    line-height: 27px;
+    padding: 15px 15px;
+    background-color: black;
+}
+
+.nav-menu-left .sub-menu li {
+    width: 150px;
+}
+
+.nav-menu-left .sub-menu li a {
+    font-size: 14px;
+    width: 150px;
+    font-family: sans-serif;
+    color: white;
+    padding: 5px 7px;
+    font-weight: 100;
+}
+
+.nav-menu-left .sub-menu li:hover:nth-child(1)>a,
+.nav-menu-left .sub-menu li:hover:nth-child(2)>a,
+.nav-menu-left .sub-menu li:hover:nth-child(3)>a,
+.nav-menu-left .sub-menu li:hover:nth-child(4)>a {
+    border-bottom: 1px solid #c9ab81;
+}
+
+
+/*-------------------RIGHT-----------------------*/
+
+.nav-menu-right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 215px;
+    height: 90px;
+}
+
+.nav-menu-right>div {
+    float: left;
+    color: white;
+    margin-top: 30px;
+}
+
+.nav-menu-right i {
+    color: #E4E4E4;
+    font-size: 25px;
+    padding-right: 30px;
+    cursor: pointer;
+}
+
+.nav-menu-right i:hover {
+    color: #c9ab81;
+}
+
+.icon-search i {
+    padding-right: 35px;
+    font-size: 22px;
+}
+
+.icon-shop {
+    position: relative;
+}
+
+.icon-shop span {
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    background-color: black;
+    color: white;
+    font-size: 11px;
+    line-height: 2;
+    padding: 1px 9px;
+    border-radius: 32px;
+    cursor: pointer;
+}
+
+.language-menu {
+    position: relative;
+    margin: 0 !important;
+    padding: 0;
+    height: 90px;
+    width: 106px;
+}
+
+.lan-menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.lan-menu>li {
+    position: relative;
+    width: 105px;
+    height: 90px;
+    padding-left: 10px;
+    line-height: 10px;
+    z-index: 2;
+}
+
+.lan-menu>li>a {
+    position: absolute;
+    line-height: 90px;
+    width: 95px;
+    color: white;
+}
+
+.lan-menu>li>a>img {
+    top: 37px;
+    left: 0;
+}
+
+.lan-menu>li>a>span {
+    margin-left: 25px;
+}
+
+.lan-menu li:hover ul {
+    display: block;
+}
+
+.lan-menu li:hover a {
+    color: #c9ab81;
+}
+
+.lan-menu .sub-menu-lan {
+    position: absolute;
+    top: 90px;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    display: none;
+}
+
+.lan-menu .sub-menu-lan li {
+    position: relative;
+    width: 95px;
+    height: 30px;
+    padding-left: 10px;
+    background-color: black;
+    overflow: hidden;
+}
+
+.lan-menu .sub-menu-lan li>a {
+    position: absolute;
+    line-height: 30px;
+    width: 95px;
+    color: white;
+    transition: 0.5s all;
+}
+
+.lan-menu .sub-menu-lan li:hover>a {
+    color: #c9ab81;
+    transform: translateX(15px);
+}
+
+.lan-menu .sub-menu-lan li>a>img {
+    top: 7px;
+    left: 0;
+}
+
+.lan-menu .sub-menu-lan li>a>span {
+    margin-left: 25px;
+}
+
+
+/* ----------------------SECTION--------------------- */
+
+section {
+    width: 100%;
+    margin: auto;
+    height: 2000px;
+    background-color: #f7f7f7;
+}
+
+.container-section {
+    width: 1200px;
+    margin: auto;
+}
+
+.container-section>p {
+    font-style: italic;
+}
+
+
+/*--------------------------------FOOTER----------------------------------------*/
+
+footer {
+    box-shadow: inset 0px 0px 0px 0px rgba(0, 0, 0, 0.6);
+    background-color: #0f1d22;
+    text-align: center;
+    padding-bottom: 50px;
+    color: white;
+}
+
+footer img {
+    width: 200px;
+}
+
+.icon-contact a {
+    font-size: 20px;
+}
+
+.icon-contact a:nth-child(1) {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    padding-top: 13px;
+}
+
+.icon-contact a:nth-child(1):hover {
+    color: white;
+    background-color: #3399ff;
+    border-radius: 15px;
+}
+
+.icon-contact a:nth-child(2) {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    padding-top: 13px;
+}
+
+.icon-contact a:nth-child(2):hover {
+    color: white;
+    background-color: #66ccff;
+    border-radius: 15px;
+}
+
+.icon-contact a:last-child {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    padding-top: 13px;
+}
+
+.icon-contact a:last-child:hover {
+    color: white;
+    background-image: linear-gradient(to right top, #caf20e, #f6bf00, #ff8b2b, #fb5c53, #d73e72);
+    border-radius: 15px;
+}
