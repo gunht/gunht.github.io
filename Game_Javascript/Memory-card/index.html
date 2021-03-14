@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Game</title>
+    <script src="./script.js" async></script>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" type="image/png" href="./img/logo.png">
+</head>
+
+<body>
+    <div id="start-game" class="text-layer visible">
+        <span>Click to Start</span>
+    </div>
+    <div id="game-over" class="text-layer">
+        <img src="./img/gameover.png" alt="Game Over" class="img-over">
+        <span class="text-gameover">Game Over</span>
+        <span class="text-playagain">Click to reset</span>
+    </div>
+    <div id="victory" class="text-layer">
+        <img src="./img/victory.png" alt="Victory" class="img-win">
+        <span class="text-victory">You Win</span>
+        <span class="text-playagain2">Click to reset</span>
+    </div>
+
+    <div class="container">
+        <div class="timer">
+            <progress id="time-remaining" max="198" value="198"></progress>
+        </div>
+
+        <div class="content">
+            <div class="card">
+                <div class="back-card card-face">
+                    <img src="./img/back.png" alt="artifact">
+                </div>
+                <div class="font-card card-face">
+                    <img src="./img/1.png" alt="hero" class="card-value">
+                </div>
+            </div>
+            <div class="card">
+                <div class="back-card card-face">
+                    <img src="./img/back.png" alt="artifact">
+                </div>
+                <div class="font-card card-face">
+                    <img src="./img/2.png" alt="hero" class="card-value">
+                </div>
+            </div>
+            <div class="card">
+                <div class="back-card card-face">
+                    <img src="./img/back.png" alt="artifact">
+                </div>
+                <div class="font-card card-face">
+                    <img src="./img/3.png" alt="hero" class="card-value">
+                </div>
+            </div>
+            <div class="card">
+                <div class="back-card card-face">
+                    <img src="./img/back.png" alt="artifact">
+                </div>
+                <div class="font-card card-face">
+                    <img src="./img/4.png" alt="hero" class="card-value">
+                </div>
+            </div>
+            <div class="card">
+                <div class="back-card card-face">
+                    <img src="./img/back.png" alt="artifact">
+                </div>
+                <div class="font-card card-face">
+                    <img src="./img/5.png" alt="hero" class="card-value">
+                </div>
+            </div>
+            <div class="card">
+                <div class="back-card card-face">
+                    <img src="./img/back.png" alt="artifact">
+                </div>
+                <div class="font-card card-face">
+                    <img src="./img/6.png" alt="hero" class="card-value">
+                </div>
+            </div>
+            <div class="card">
+                <div class="back-card card-face">
+                    <img src="./img/back.png" alt="artifact">
+                </div>
+                <div class="font-card card-face">
+                    <img src="./img/7.png" alt="hero" class="card-value">
+                </div>
+            </div>
+            <div class="card">
+                <div class="back-card card-face">
+                    <img src="./img/back.png" alt="artifact">
+                </div>
+                <div class="font-card card-face">
+                    <img src="./img/8.png" alt="hero" class="card-value">
+                </div>
+            </div>
+            <div class="card">
+                <div class="back-card card-face">
+                    <img src="./img/back.png" alt="artifact">
+                </div>
+                <div class="font-card card-face">
+                    <img src="./img/9.png" alt="hero" class="card-value">
+                </div>
+            </div>
+            <div class="card">
+                <div class="back-card card-face">
+                    <img src="./img/back.png" alt="artifact">
+                </div>
+                <div class="font-card card-face">
+                    <img src="./img/10.png" alt="hero" class="card-value">
+                </div>
+            </div>
+            <div class="card">
+                <div class="back-card card-face">
+                    <img src="./img/back.png" alt="artifact">
+                </div>
+                <div class="font-card card-face">
+                    <img src="./img/11.png" alt="hero" class="card-value">
+                </div>
+            </div>
+            <div class="card">
+                <div class="back-card card-face">
+                    <img src="./img/back.png" alt="artifact">
+                </div>
+                <div class="font-card card-face">
+                    <img src="./img/12.png" alt="hero" class="card-value">
+                </div>
+            </div>
+            <div class="card">
+                <div class="back-card card-face">
+                    <img src="./img/back.png" alt="artifact">
+                </div>
+                <div class="font-card card-face">
+                    <img src="./img/13.png" alt="hero" class="card-value">
+                </div>
+            </div>
+            <div class="card">
+                <div class="back-card card-face">
+                    <img src="./img/back.png" alt="artifact">
+                </div>
+                <div class="font-card card-face">
+                    <img src="./img/14.png" alt="hero" class="card-value">
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="back-card card-face">
+                    <img src="./img/back.png" alt="artifact">
+                </div>
+                <div class="font-card card-face">
+                    <img src="./img/15.png" alt="hero" class="card-value">
+                </div>
+            </div>
+            <div class="card">
+                <div class="back-card card-face">
+                    <img src="./img/back.png" alt="artifact">
+                </div>
+                <div class="font-card card-face">
+                    <img src="./img/16.png" alt="hero" class="card-value">
+                </div>
+            </div>
+            <div class="card">
+                <div class="back-card card-face">
+                    <img src="./img/back.png" alt="artifact">
+                </div>
+                <div class="font-card card-face">
+                    <img src="./img/17.png" alt="hero" class="card-value">
+                </div>
+            </div>
+            <div class="card">
+                <div class="back-card card-face">
+                    <img src="./img/back.png" alt="artifact">
+                </div>
+                <div class="font-card card-face">
+                    <img src="./img/18.png" alt="hero" class="card-value">
+                </div>
+            </div>
+            <div class="card">
+                <div class="back-card card-face">
+                    <img src="./img/back.png" alt="artifact">
+                </div>
+                <div class="font-card card-face">
+                    <img src="./img/19.png" alt="hero" class="card-value">
+                </div>
+            </div>
+            <div class="card">
+                <div class="back-card card-face">
+                    <img src="./img/back.png" alt="artifact">
+                </div>
+                <div class="font-card card-face">
+                    <img src="./img/20.png" alt="hero" class="card-value">
+                </div>
+            </div>
+            <div class="card">
+                <div class="back-card card-face">
+                    <img src="./img/back.png" alt="artifact">
+                </div>
+                <div class="font-card card-face">
+                    <img src="./img/21.png" alt="hero" class="card-value">
+                </div>
+            </div>
+            <div class="card">
+                <div class="back-card card-face">
+                    <img src="./img/back.png" alt="artifact">
+                </div>
+                <div class="font-card card-face">
+                    <img src="./img/22.png" alt="hero" class="card-value">
+                </div>
+            </div>
+            <div class="card">
+                <div class="back-card card-face">
+                    <img src="./img/back.png" alt="artifact">
+                </div>
+                <div class="font-card card-face">
+                    <img src="./img/23.png" alt="hero" class="card-value">
+                </div>
+            </div>
+            <div class="card">
+                <div class="back-card card-face">
+                    <img src="./img/back.png" alt="artifact">
+                </div>
+                <div class="font-card card-face">
+                    <img src="./img/24.png" alt="hero" class="card-value">
+                </div>
+            </div>
+            <div class="card">
+                <div class="back-card card-face">
+                    <img src="./img/back.png" alt="artifact">
+                </div>
+                <div class="font-card card-face">
+                    <img src="./img/25.png" alt="hero" class="card-value">
+                </div>
+            </div>
+            <div class="card">
+                <div class="back-card card-face">
+                    <img src="./img/back.png" alt="artifact">
+                </div>
+                <div class="font-card card-face">
+                    <img src="./img/26.png" alt="hero" class="card-value">
+                </div>
+            </div>
+            <div class="card">
+                <div class="back-card card-face">
+                    <img src="./img/back.png" alt="artifact">
+                </div>
+                <div class="font-card card-face">
+                    <img src="./img/27.png" alt="hero" class="card-value">
+                </div>
+            </div>
+            <div class="card">
+                <div class="back-card card-face">
+                    <img src="./img/back.png" alt="artifact">
+                </div>
+                <div class="font-card card-face">
+                    <img src="./img/28.png" alt="hero" class="card-value">
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="back-card card-face">
+                    <img src="./img/back.png" alt="artifact">
+                </div>
+                <div class="font-card card-face">
+                    <img src="./img/1.png" alt="hero" class="card-value">
+                </div>
+            </div>
+            <div class="card">
+                <div class="back-card card-face">
+                    <img src="./img/back.png" alt="artifact">
+                </div>
+                <div class="font-card card-face">
+                    <img src="./img/2.png" alt="hero" class="card-value">
+                </div>
+            </div>
+            <div class="card">
+                <div class="back-card card-face">
+                    <img src="./img/back.png" alt="artifact">
+                </div>
+                <div class="font-card card-face">
+                    <img src="./img/3.png" alt="hero" class="card-value">
+                </div>
+            </div>
+            <div class="card">
+                <div class="back-card card-face">
+                    <img src="./img/back.png" alt="artifact">
+                </div>
+                <div class="font-card card-face">
+                    <img src="./img/4.png" alt="hero" class="card-value">
+                </div>
+            </div>
+            <div class="card">
+                <div class="back-card card-face">
+                    <img src="./img/back.png" alt="artifact">
+                </div>
+                <div class="font-card card-face">
+                    <img src="./img/5.png" alt="hero" class="card-value">
+                </div>
+            </div>
+            <div class="card">
+                <div class="back-card card-face">
+                    <img src="./img/back.png" alt="artifact">
+                </div>
+                <div class="font-card card-face">
+                    <img src="./img/6.png" alt="hero" class="card-value">
+                </div>
+            </div>
+            <div class="card">
+                <div class="back-card card-face">
+                    <img src="./img/back.png" alt="artifact">
+                </div>
+                <div class="font-card card-face">
+                    <img src="./img/7.png" alt="hero" class="card-value">
+                </div>
+            </div>
+            <div class="card">
+                <div class="back-card card-face">
+                    <img src="./img/back.png" alt="artifact">
+                </div>
+                <div class="font-card card-face">
+                    <img src="./img/8.png" alt="hero" class="card-value">
+                </div>
+            </div>
+            <div class="card">
+                <div class="back-card card-face">
+                    <img src="./img/back.png" alt="artifact">
+                </div>
+                <div class="font-card card-face">
+                    <img src="./img/9.png" alt="hero" class="card-value">
+                </div>
+            </div>
+            <div class="card">
+                <div class="back-card card-face">
+                    <img src="./img/back.png" alt="artifact">
+                </div>
+                <div class="font-card card-face">
+                    <img src="./img/10.png" alt="hero" class="card-value">
+                </div>
+            </div>
+            <div class="card">
+                <div class="back-card card-face">
+                    <img src="./img/back.png" alt="artifact">
+                </div>
+                <div class="font-card card-face">
+                    <img src="./img/11.png" alt="hero" class="card-value">
+                </div>
+            </div>
+            <div class="card">
+                <div class="back-card card-face">
+                    <img src="./img/back.png" alt="artifact">
+                </div>
+                <div class="font-card card-face">
+                    <img src="./img/12.png" alt="hero" class="card-value">
+                </div>
+            </div>
+            <div class="card">
+                <div class="back-card card-face">
+                    <img src="./img/back.png" alt="artifact">
+                </div>
+                <div class="font-card card-face">
+                    <img src="./img/13.png" alt="hero" class="card-value">
+                </div>
+            </div>
+            <div class="card">
+                <div class="back-card card-face">
+                    <img src="./img/back.png" alt="artifact">
+                </div>
+                <div class="font-card card-face">
+                    <img src="./img/14.png" alt="hero" class="card-value">
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="back-card card-face">
+                    <img src="./img/back.png" alt="artifact">
+                </div>
+                <div class="font-card card-face">
+                    <img src="./img/15.png" alt="hero" class="card-value">
+                </div>
+            </div>
+            <div class="card">
+                <div class="back-card card-face">
+                    <img src="./img/back.png" alt="artifact">
+                </div>
+                <div class="font-card card-face">
+                    <img src="./img/16.png" alt="hero" class="card-value">
+                </div>
+            </div>
+            <div class="card">
+                <div class="back-card card-face">
+                    <img src="./img/back.png" alt="artifact">
+                </div>
+                <div class="font-card card-face">
+                    <img src="./img/17.png" alt="hero" class="card-value">
+                </div>
+            </div>
+            <div class="card">
+                <div class="back-card card-face">
+                    <img src="./img/back.png" alt="artifact">
+                </div>
+                <div class="font-card card-face">
+                    <img src="./img/18.png" alt="hero" class="card-value">
+                </div>
+            </div>
+            <div class="card">
+                <div class="back-card card-face">
+                    <img src="./img/back.png" alt="artifact">
+                </div>
+                <div class="font-card card-face">
+                    <img src="./img/19.png" alt="hero" class="card-value">
+                </div>
+            </div>
+            <div class="card">
+                <div class="back-card card-face">
+                    <img src="./img/back.png" alt="artifact">
+                </div>
+                <div class="font-card card-face">
+                    <img src="./img/20.png" alt="hero" class="card-value">
+                </div>
+            </div>
+            <div class="card">
+                <div class="back-card card-face">
+                    <img src="./img/back.png" alt="artifact">
+                </div>
+                <div class="font-card card-face">
+                    <img src="./img/21.png" alt="hero" class="card-value">
+                </div>
+            </div>
+            <div class="card">
+                <div class="back-card card-face">
+                    <img src="./img/back.png" alt="artifact">
+                </div>
+                <div class="font-card card-face">
+                    <img src="./img/22.png" alt="hero" class="card-value">
+                </div>
+            </div>
+            <div class="card">
+                <div class="back-card card-face">
+                    <img src="./img/back.png" alt="artifact">
+                </div>
+                <div class="font-card card-face">
+                    <img src="./img/23.png" alt="hero" class="card-value">
+                </div>
+            </div>
+            <div class="card">
+                <div class="back-card card-face">
+                    <img src="./img/back.png" alt="artifact">
+                </div>
+                <div class="font-card card-face">
+                    <img src="./img/24.png" alt="hero" class="card-value">
+                </div>
+            </div>
+            <div class="card">
+                <div class="back-card card-face">
+                    <img src="./img/back.png" alt="artifact">
+                </div>
+                <div class="font-card card-face">
+                    <img src="./img/25.png" alt="hero" class="card-value">
+                </div>
+            </div>
+            <div class="card">
+                <div class="back-card card-face">
+                    <img src="./img/back.png" alt="artifact">
+                </div>
+                <div class="font-card card-face">
+                    <img src="./img/26.png" alt="hero" class="card-value">
+                </div>
+            </div>
+            <div class="card">
+                <div class="back-card card-face">
+                    <img src="./img/back.png" alt="artifact">
+                </div>
+                <div class="font-card card-face">
+                    <img src="./img/27.png" alt="hero" class="card-value">
+                </div>
+            </div>
+            <div class="card">
+                <div class="back-card card-face">
+                    <img src="./img/back.png" alt="artifact">
+                </div>
+                <div class="font-card card-face">
+                    <img src="./img/28.png" alt="hero" class="card-value">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
