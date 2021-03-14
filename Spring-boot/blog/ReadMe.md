@@ -1,3 +1,9 @@
+# User's Guide
+1. access at http://localhost:8080
+2. login using 1 out of 6 available accounts in user.sql
+and you can add new posts, new comments, also can view others' posts and comment on their posts
+(Ex: email: 'bob@gmail.com', pass: 'abc')
+
 # Lập trình tại lớp 180 phút: ứng dụng Micro Blog
 
 ## Yêu cầu
