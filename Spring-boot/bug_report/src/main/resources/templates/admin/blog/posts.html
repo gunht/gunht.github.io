@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{/layout/layout :: main-fragment(~{:: title},
+                                                        'admin-header',
+                                                        ~{:: #main-content},
+                                                        ~{:: #js-resources}
+                                                        )}">
+<head>
+    <meta charset="UTF-8">
+    <title>User Manager</title>
+</head>
+<body>
+<div id="main-content" class="container mt-3">
+    <h2 class="text-center">User List</h2>
+    <div>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>Date - Time</th>
+                <th>Title</th>
+                <th>Status</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="post,n : ${posts}">
+                <td th:text="${n.count}"></td>
+                <td th:text="${#dates.format(post.createdAt, 'yyyy-MM-dd HH:mm')}"></td>
+                <td th:text="${post.title}"></td>
+                <td th:text="${post.status.name}"></td>
+                <td>
+                    <a th:href="@{/admin/posts/edit/{id}(id=${post.id})}" class="btn-sm" style="background: #33cabb; color: #FFFFFF">Edit</a>
+<!--                    <a th:href="@{/admin/posts/remove/{id}(id=${post.id})}" class="btn-sm" style="background: #33cabb; color: #FFFFFF">Remove</a>-->
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <nav aria-label="Page navigation">
+            <ul class="pagination" id="pagination"></ul>
+        </nav>
+    </div>
+
+</div>
+
+<th:block id="js-resources">
+    <script th:src="@{/vendor/pagination/jquery.simplePagination.js}"></script>
+    <script th:inline="javascript">
+        function pagination() {
+            $('#pagination').pagination({
+                pages: [[${totalPages}]],
+                currentPage: [[${currentPage}]],
+                cssStyle: '',
+                prevText: '<span aria-hidden="true">&laquo;</span>',
+                nextText: '<span aria-hidden="true">&raquo;</span>',
+                onInit: function () {
+                    // fire first page loading
+                },
+                onPageClick: function (page, evt) {
+                    $('#pagination .active .current').addClass('page-link')
+                    $('#pagination .ellipse.clickable').addClass('page-link')
+                    $('#pagination .disabled .current.prev').addClass('page-link')
+                    $('#pagination .disabled .current.next').addClass('page-link')
+                    location.href = "/admin/posts?page="+page
+                }
+            });
+
+            $('#pagination .active .current').addClass('page-link')
+            $('#pagination .ellipse.clickable').addClass('page-link')
+            $('#pagination .disabled .current.prev').addClass('page-link')
+            $('#pagination .disabled .current.next').addClass('page-link')
+        };
+    </script>
+</th:block>
+
+</body>
+</html>

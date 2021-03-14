@@ -1,0 +1,19 @@
+package com.example.spring_02.respository;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+
+public abstract class DAO<T> {
+    protected List<T> collections = new ArrayList<>();
+
+    public abstract List<T> getAll();
+    public abstract Optional<T> get(int id);
+    public abstract void readCSV(String csvFile);
+    public abstract List<T> searchByKeywork(String keywork);
+
+    public abstract void add(T t);
+    public abstract void update(T t);
+    public abstract void delete(T t);
+    public abstract void deleteByID(int id);
+}

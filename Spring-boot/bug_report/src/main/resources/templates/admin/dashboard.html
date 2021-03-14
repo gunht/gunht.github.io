@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{/layout/layout :: main-fragment(~{:: title},
+                                                        'admin-header',
+                                                        ~{:: #main-content},
+                                                        ~{:: #js-resources}
+                                                        )}">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin</title>
+</head>
+<body>
+<div id="main-content" class="container mt-3">
+    <h1>ADMIN PAGE</h1>
+</div>
+
+<th:block id="js-resources">
+    <script th:src="@{/vendor/pagination/jquery.simplePagination.js}"></script>
+</th:block>
+</body>
+</html>

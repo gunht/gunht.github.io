@@ -1,0 +1,40 @@
+body {
+    position: relative;
+    font-family: "Germania One";
+}
+
+#game_over {
+    position: absolute;
+    width: 405px;
+    height: 505px;
+    background: #00000033;
+    display: none;
+}
+
+#you_won {
+    position: absolute;
+    left: 125px;
+    top: 100px;
+    width: 150px;
+    display: none;
+    z-index: 1;
+}
+
+#you_lose {
+    position: absolute;
+    top: 100px;
+    left: 0;
+    width: 400px;
+    display: none;
+    z-index: 1;
+}
+
+#play_again {
+    position: absolute;
+    cursor: pointer;
+    top: 310px;
+    right: 152.5px;
+    font-size: 1.25em;
+    color: #ffff;
+    z-index: 1;
+}

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{/layout/layout :: main-fragment(~{:: title},
+                                                        'post-header',
+                                                        ~{:: #main-content},
+                                                        ~{:: #js-resources}
+                                                        )}">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${post.title}"></title>
+</head>
+<body>
+
+<div id="main-content" class="mt-4">
+    <div class="container breadcrumb_custom mb-4">
+        <a class="mr-2" href="/">Post</a>
+        <i class="fas fa-chevron-right arrow"></i>
+        <span class="ml-2" th:text="${post.title}"></span>
+    </div>
+
+    <div class="main-content-wrapper">
+        <div class="wrapper-post container">
+            <h1 class="h1 text-uppercase" th:text="${post.title}"></h1>
+            <div class="d-flex mb-5">
+                By <span th:text="${post.getCreatedBy().fullName}" class="font-weight-bold mx-2"></span> ·
+                <span th:text="${#dates.format(post.createdAt, 'dd/MM/yyyy')}" class="mx-2"></span> ·
+                <span th:text="${post.getStatus().name}" class="font-weight-bold mx-2"></span> ·
+                <div th:unless="${user == null} OR (${user.id != post.getCreatedBy().id} and ${user.id != 1} )">
+                    <a th:href="@{/post/edit(id=${post.id})}" class="ml-5">Edit</a>
+                    <a class="ml-2 text-primary" data-toggle="modal" data-target="#modal-delete-post" style="cursor: pointer">Remove</a>
+                </div>
+            </div>
+            <p th:text="${post.content}"></p>
+            <div class="small-demo row">
+                <div class="col-xl-4 border">
+                    <a th:href="${!post.image1.contains('no-image')} ? ${post.getExtraImage1()} : '/photo/no-image.png'">
+                        <img th:attr="onerror=@{this.src='/photo/no-image.png'}, src=@{${post.getExtraImage1()}}">
+                    </a>
+                </div>
+                <div class="col-xl-4 border">
+                    <a th:href="${!post.image2.contains('no-image')} ? ${post.getExtraImage2()} : '/photo/no-image.png'">
+                        <img th:attr="onerror=@{this.src='/photo/no-image.png'}, src=@{${post.getExtraImage2()}}">
+                    </a>
+                </div>
+                <div class="col-xl-4 border">
+                    <a th:href="${!post.image3.contains('no-image')} ? ${post.getExtraImage3()} : '/photo/no-image.png'">
+                        <img th:attr="onerror=@{this.src='/photo/no-image.png'}, src=@{${post.getExtraImage3()}}">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="wrapper-comment mt-5 py-5">
+            <p class="container mb-1">
+                <i class="fa fa-comments-o" aria-hidden="true"></i>
+                <span th:text="${post.getComments().size()} + ' Comments'"></span>
+            </p>
+            <div class="comment-inner container border">
+                <div id="form-comment">
+                    <form th:action="@{/post/{postId}/save-comment(postId=${post.id})}" th:object="${commentReq}"
+                          method="post">
+                        <div class="row mt-3">
+                            <div class="col-xl-1 icon-comment pr-0">
+                                <i class="fa fa-comments-o" aria-hidden="true"></i>
+                            </div>
+                            <div class="form-group col-xl-10 pl-0">
+                                <textarea rows="3" th:field="*{content}" required
+                                          placeholder="Write something..."></textarea>
+                            </div>
+                            <div class="col-xl-1 btn-comment">
+                                <input type="submit" class="btn text-primary border-0 bg-light" value="Send">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <hr>
+                <div class="comment-user px-5">
+                    <div th:each="cmt:${post.getComments()}" class="py-3">
+                        <div class="commenter-info">
+                            <div class="avatar mr-3">
+                                <img th:src="@{/photo/no-avatar.png}" alt="avatar">
+                            </div>
+                            <div class="info">
+                                <p th:text="${cmt.getCommenter().fullName}" class="mb-0"></p>
+                                <p th:text="${#dates.format(cmt.createdAt, 'yyyy/MM/dd · HH:mm')}"
+                                   class="date-cmt text-secondary"></p>
+                            </div>
+                        </div>
+                        <p th:text="${cmt.content}"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modal-delete-post" tabindex="-1" role="dialog" aria-labelledby="modalDeletePost" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Xác nhận xóa bài viết</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <span>Bạn chắc chắn muốn xóa bài viết?</span>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
+                    <div class="btn btn-danger btn-delete-post">Xóa</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<th:block id="js-resources">
+    <script th:inline="javascript">
+        $('.btn-delete-post').click(function() {
+            $.ajax({
+                url: '/post/remove/'+[[${post.id}]],
+                type: 'DELETE',
+                contentType: "application/json; charset=utf-8",
+                success: function(data) {
+                    $('#modal-delete-post').hide();
+                    setTimeout(function() {
+                        location.href = "/post";
+                    }, 2000);
+                    toastr.success("Xóa bài viết thành công");
+                },
+                error: function(data) {
+                    toastr.warning(data.responseJSON.message);
+                },
+            });
+        })
+    </script>
+</th:block>
+
+</body>
+</html>

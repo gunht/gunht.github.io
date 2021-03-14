@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{/layout/layout :: main-fragment(~{:: title},
+                                                        'admin-header',
+                                                        ~{:: #main-content},
+                                                        ~{:: #js-resources}
+                                                        )}">
+<head>
+    <meta charset="UTF-8">
+    <title>User Detail</title>
+</head>
+<body>
+<div id="main-content" class="container mt-3">
+    <ul class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/admin/user">User Manager</a></li>
+        <li class="breadcrumb-item active">User Detail</li>
+    </ul>
+    <h2 class="text-center">User</h2>
+    <div class="text-center">
+        <form th:action="@{/admin/user/save(userId=${user.id})}" th:object="${updateUserReq}" method="post">
+            <div class="form-group">
+                <b>Full Name: </b>
+                <span th:text="${user.fullName}"></span>
+            </div>
+            <div class="form-group">
+                <b>Email: </b>
+                <span th:text="${user.email}"></span>
+            </div>
+            <div class="form-group">
+                <th:block th:each="role:${roles}">
+                    <input type="checkbox" th:name="${role.name}" th:field="*{roles}" th:text="${role.name}" th:value="${role.id}"
+                           class="mr-2" th:unless="${role.name.equals('ADMIN')}">
+                    <span class="mr-4"></span>
+                </th:block>
+            </div>
+            <button type="submit" class="btn-sm" style="background: #33cabb;">Update</button>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

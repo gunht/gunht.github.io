@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vẽ hình tự do</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="option">
+            <div class="rgb">
+                <button value="#ff0000"></button>
+                <button value="#00ff00"></button>
+                <button value="#0000ff"></button>
+                <button value="#ffff00"></button>
+                <button value="#00ffff"></button>
+                <button value="#ff00ff"></button>
+                <button value="#ff6a00"></button>
+                <button value="#FFB6C1"></button>
+                <button value="#CD853F"></button>
+                <button value="#F5F5F5"></button>
+                <button value="#008080"></button>
+                <button value="#98FB98"></button>
+            </div>
+            <div class="brush">
+                <button value="1"></button>
+                <button value="2"></button>
+                <button value="3"></button>
+                <button value="4"></button>
+                <button value="5"></button>
+                <button value="6"></button>
+                <button value="7"></button>
+            </div>
+            <button id="btnClear">Clear</button>
+            <img src="https://raw.githubusercontent.com/gunht/img/master/hoclacoviec.png" alt="logo Học là có việc">
+        </div>
+        <canvas id="canvas" width="1100" height="650" style="background-color:#000"></canvas>
+    </div>
+    <script type="text/javascript" src="freehand.js"></script>
+    <script>
+        let canvas = document.getElementById("canvas");
+        let freehand = new FreeHand(canvas);
+        let context = canvas.getContext('2d');
+        context.lineWidth = 5;
+        canvas.onmousedown = (event) => {
+            freehand.onmousedown(event);
+        };
+
+        canvas.onmousemove = (event) => {
+            freehand.onmousemove(event);
+        }
+
+        canvas.onmouseup = (event) => {
+            freehand.onmouseup(event);
+        }
+
+        let btnClear = document.getElementById("btnClear");
+        btnClear.onclick = () => {
+            freehand.clearCanvas();
+        }
+    </script>
+</body>
+
+</html>

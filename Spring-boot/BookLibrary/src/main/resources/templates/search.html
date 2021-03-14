@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Book</title>
+    <link rel="stylesheet" href="/css/add.css">
+    <link rel="stylesheet" href="/css/base.css">
+</head>
+
+<body>
+    <div class="wrap">
+        <header>
+            <div class="nav">
+                <a th:href="@{/library}" class="nav-item">Trang chủ</a>
+                <a th:href="@{/library/add}" class="nav-item">Thêm mới</a>
+                <a th:href="@{/library/search}" class="nav-item">Tìm kiếm</a>
+            </div>
+        </header>
+
+        <div class="container_search">
+            <p>Tìm kiếm theo tên hoặc tác giả</p>
+            <form class="item__content" th:action="@{/library/search}" th:object="${searchRequest}" method="post" novalidate="novalidate">
+                <input type="text" placeholder="Search" th:field="*{keywork}" /><br><br>
+                <button class="btn" type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{/layout/layout_modal :: main-fragment(~{:: title},
+                                                        ~{:: #main-content},
+                                                        ~{:: #js-resources}
+                                                        )}">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+
+<div id="main-content" class="container mt-3">
+    <div class="login-form">
+        <form th:action="@{/login}" method="post">
+            <h2 class="text-center">Log in</h2>
+            <div class="form-group">
+                <input type="email" class="form-control" name="email" placeholder="Email" required="required">
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control" name="password" placeholder="Password" required="required">
+            </div>
+            <div class="form-group">
+<!--                <div class="btn btn-primary btn-block sign-in-btn">Log in</div>-->
+                <input type="submit" class="btn btn-primary btn-block" value="Log in">
+            </div>
+            <div class="clearfix">
+                <a href="#" class="float-right">Forgot Password?</a>
+            </div>
+        </form>
+        <p class="text-center"><a href="/signup">Create an Account</a></p>
+    </div>
+</div>
+
+</body>
+</html>

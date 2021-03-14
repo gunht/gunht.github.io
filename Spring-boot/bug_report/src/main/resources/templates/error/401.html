@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{/layout/layout :: main-fragment(
+                                                ~{:: title},
+                                                'short-header',
+                                                ~{:: #js-resources},
+                                                ~{:: #main-content}
+                                               )}">
+
+<head>
+    <title>Không có quyền truy cập</title>
+
+</head>
+<body>
+<main id="main-content" class="error-div">
+    <img th:src="@{/photo/no-avatar.png}" alt="401" class="img-fluid">
+    <a href="/">
+        <button class="btn btn-secondary">Quay về trang chủ</button>
+    </a>
+</main>
+
+<th:block id="js-resources"></th:block>
+</body>
+</html>

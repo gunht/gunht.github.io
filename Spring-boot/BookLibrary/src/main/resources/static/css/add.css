@@ -1,0 +1,36 @@
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.infor {
+    margin-right: 20px;
+}
+
+.infor p {
+    margin: 8px 0 35px 0;
+}
+
+.form {
+    text-align: center;
+}
+
+.item__content input,
+.form input {
+    outline: none;
+    width: 750px;
+    height: 35px;
+}
+
+.container_search {
+    width: 1200px;
+    margin: auto;
+}
+
+.container_search p {
+    text-align: center;
+}
+
+.item__content {
+    text-align: center;
+}

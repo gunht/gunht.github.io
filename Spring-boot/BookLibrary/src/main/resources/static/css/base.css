@@ -1,0 +1,77 @@
+:root {
+    --white-color: #fff;
+    --black-color: #000;
+    --text-color: #ccc;
+    --primary-color: #ff1616;
+    --backgound-color: #131313;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    background: var(--backgound-color);
+    color: var(--white-color);
+}
+
+body {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: var(--white-color);
+}
+
+header {
+    background-image: url(/img/banner.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 180px;
+}
+
+.nav {
+    padding-top: 152px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.nav-item {
+    padding: 10px 15px;
+    font-weight: 500;
+}
+
+.nav-item:hover {
+    background: #434242;
+}
+
+.container {
+    width: 1200px;
+    margin: 50px auto;
+}
+
+.btn {
+    background: var(--white-color);
+    color: var(--black-color);
+    width: 100px;
+    text-align: center;
+    text-transform: uppercase;
+    border-radius: 5px;
+    line-height: 35px;
+    padding: 0;
+    border: none;
+    outline: none;
+}
+
+.btn:hover {
+    background: #dddbdb;
+    transition: background-color .2s;
+    cursor: pointer;
+}
+
+.logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+}

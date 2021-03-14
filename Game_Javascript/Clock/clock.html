@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            position: relative;
+            overflow: scroll;
+        }
+        
+        .khung {
+            position: absolute;
+            top: 0;
+            left: calc(50% - 175px);
+            z-index: -1;
+        }
+        
+        .khung img {
+            width: 350px;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="canvas" width="400" height="700" style="border-radius: 30px;"></canvas>
+    <div class="khung">
+        <img src="https://raw.githubusercontent.com/gunht/img/master/time/khung.png" alt="khung">
+    </div>
+    <script>
+        const canvas = document.getElementById("canvas");
+        const c = canvas.getContext("2d");
+        let radius = canvas.width / 2; // Do lon vong tron
+        radius = radius / 2;
+
+        let morning = new Image();
+        let affternoon = new Image();
+        let night = new Image();
+
+
+        function drawFace() {
+            let grad;
+            let date = new Date();
+            let d = date.getDate();
+            let m = date.getMonth();
+            let day = date.getDay();
+            let days = new Array('Sun', 'Mon', 'Tue', 'Wed', 'Thur', 'Fri', 'Sat');
+
+            //Sáng trưa chiều tối
+            let time = (date.getHours() >= 6 && date.getHours() <= 12) ? morning :
+                (date.getHours() >= 12 && date.getHours() <= 18) ? affternoon :
+                (date.getHours() >= 18 && date.getHours() <= 22) ? evening :
+                night;
+
+            c.beginPath();
+            c.arc(0, 0, radius, 0, 2 * Math.PI);
+            c.fill();
+            c.drawImage(time, 50, -270);
+
+            //Vẽ viền ngoài đồng hồ
+            c.beginPath();
+            c.arc(0, 0, radius + 10, 0, 2 * Math.PI);
+            c.fill();
+            c.beginPath();
+            c.arc(0, 0, radius + 5, 0, 2 * Math.PI);
+            c.fillStyle = '#fff';
+            c.fill();
+            c.beginPath();
+            c.arc(0, 0, radius + 3, 0, 2 * Math.PI);
+            c.fillStyle = '#000';
+            c.fill();
+
+
+
+            // Vẽ một điểm ở chính tâm quay kim đồng hồ
+            c.beginPath();
+            c.arc(0, 0, radius * 0.05, 0, 2 * Math.PI);
+            c.fillStyle = 'white';
+            c.fill();
+
+
+            // Thứ trong ngày và ngày
+            c.beginPath();
+            c.lineWidth = 2;
+            c.rect(-32, -55, 60, 35);
+            // c.fillStyle = "white";
+            c.font = "bold 20px Georgia";
+            c.fillText(days[day], -25, -30);
+            c.fillText(d, -35, 35);
+            c.fillText("/", -5, 35);
+            c.fillText(m, 10, 35);
+            c.stroke();
+        }
+
+        function drawNumbers() {
+            let ang;
+            c.font = radius * 0.2 + "px arial";
+            c.fillStyle = "white";
+            c.textBaseline = "middle";
+            c.textAlign = "center";
+            for (let num = 1; num < 13; num += 1) {
+                ang = num * Math.PI / 6 - 0.5 * Math.PI;
+                c.fillText(num.toString(), radius * 0.85 * Math.cos(ang), radius * 0.85 * Math.sin(ang));
+            }
+        }
+
+
+
+        function drawTime() {
+            let now = new Date();
+            let hour = now.getHours();
+            let minute = now.getMinutes();
+            let second = now.getSeconds();
+            let milisecond = now.getMilliseconds();
+
+            // second: mỗi giây, kim giây quay được một góc Math.PI / 30
+            second = (second * Math.PI / 30) + (milisecond * Math.PI / 30000);
+            drawHand(c, second, radius * 0.9, radius * 0.02);
+
+            //minute: trong cùng 1 phút ~ Math.PI/30, tính thêm góc dư do kim giây
+            minute = (minute * Math.PI / 30) + (second * Math.PI / (30 * 60));
+            drawHand(c, minute, radius * 0.8, radius * 0.07);
+
+
+            //hour: trong cung một giờ ~ Math.PI/6 , tính thêm góc dư do phút, giây
+            hour = hour % 12;
+            hour = (hour * Math.PI / 6) + (minute * Math.PI / (6 * 60)) + (second * Math.PI / (360 * 60));
+            drawHand(c, hour, radius * 0.5, radius * 0.07);
+        }
+
+        function drawHand(c, angle, length, width) {
+            c.beginPath();
+            c.lineWidth = width;
+            c.lineCap = "round";
+            c.moveTo(0, 0);
+            angle -= Math.PI * 0.5;
+            c.lineTo(length * Math.cos(angle), length * Math.sin(angle));
+            c.stroke();
+        }
+
+        class Pendulum {
+            constructor(x, y, length, radius, beta) {
+                this.x = x; //điểm tâm quay
+                this.y = y;
+                this.length = length;
+                this.radius = radius;
+                this.beta = beta; //Lưu lại góc ban đầu     
+                this.T = 0;
+                this.deltaT = 0.02;
+            }
+
+            update() {
+                // Đây mới là công thức đúng phù hợp với tính chất vật lý con lắc đơn
+                this.angle = this.beta * Math.sin(this.T) + Math.PI * 0.5;
+                this.T += this.deltaT;
+
+                c.beginPath();
+                c.lineWidth = 5;
+                c.lineCap = "round";
+                c.moveTo(this.x, this.y);
+                c.strokeStyle = "black";
+                c.lineTo(this.x + this.length * Math.cos(this.angle),
+                    this.y + this.length * Math.sin(this.angle));
+                c.stroke();
+
+                c.beginPath();
+                c.strokeStyle = "white";
+                c.arc(this.x + (this.length + this.radius) * Math.cos(this.angle),
+                    this.y + (this.length + this.radius) * Math.sin(this.angle),
+                    this.radius + 10, 0, Math.PI * 2, false);
+
+                c.fillStyle = "black";
+                c.fill();
+                c.closePath();
+            }
+        }
+
+        let pendulum = new Pendulum(0, 0, canvas.height * 0.4, 15, Math.PI * 0.15);
+
+        function animate() {
+            requestAnimationFrame(animate);
+            c.clearRect(0, 0, canvas.width, canvas.height);
+            c.save();
+            c.translate(radius * 2, radius + 170);
+            pendulum.update();
+            drawFace();
+            drawNumbers();
+            drawTime();
+            c.restore();
+        }
+        animate();
+
+        morning.src = 'https://raw.githubusercontent.com/gunht/img/master/time/morning.png';
+        affternoon.src = 'https://raw.githubusercontent.com/gunht/img/master/time/afternoon.png';
+        night.src = 'https://raw.githubusercontent.com/gunht/img/master/time/night.png';
+    </script>
+</body>
+
+</html>

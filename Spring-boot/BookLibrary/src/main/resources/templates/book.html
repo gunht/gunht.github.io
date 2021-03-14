@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${book.name}"></title>
+    <link rel="stylesheet" href="/css/book.css">
+    <link rel="stylesheet" href="/css/base.css">
+</head>
+
+<body>
+    <div class="wrap">
+        <header>
+            <div class="nav">
+                <a th:href="@{/library}" class="nav-item">Trang chủ</a>
+                <a th:href="@{/library/add}" class="nav-item">Thêm mới</a>
+                <a th:href="@{/library/search}" class="nav-item">Tìm kiếm</a>
+            </div>
+        </header>
+
+        <div class="container">
+            <div class="item">
+                <div class="item-thumb">
+                    <img th:attr="onerror=@{this.src='/img/Default.jpg'}, src=${book.img}, alt=${book.name}">
+                </div>
+                <div class="item__content">
+                    <div class="item__content-info">
+                        <h2 th:text="${book.name}"></h2>
+                        <p th:text="@{'Tác giả: ' + ${book.author}}" class="item-author"></p>
+                        <p style="font-style:italic">Nội dung: </p>
+                        <p th:text="${book.description}" class="item-description"></p>
+                    </div>
+
+                    <a class="btn" th:href="@{/library/edit/{id}(id=${book.id})}">Edit</a>
+                    <form class="item__content-button" th:action="@{/library/delete}" th:object="${book}" method="post" novalidate="novalidate">
+                        <input type="hidden" th:field="*{id}" />
+                        <button class="btn" type="submit">Delete</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

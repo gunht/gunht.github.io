@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Money Converter</title>
+</head>
+
+<body>
+<form th:action="@{/converter}" th:object="${moneyRequest}" method="POST">
+    <span>Amount: </span>
+    <input type="text" th:field="*{amount}"><br><br>
+
+    <span>From: </span>
+    <select th:field="*{fromCode}">
+        <th:block th:each="currency: ${currencyCode}">
+            <option th:value="${currency.Code}" th:text="@{${currency.Country} + ': ' + ${currency.Code}}"></option>
+        </th:block>
+    </select>
+
+    <span>To: </span>
+    <select th:field="*{toCode}">
+        <th:block th:each="currency: ${currencyCode}">
+            <option th:value="${currency.Code}" th:text="@{${currency.Country} + ': ' + ${currency.Code}}"></option>
+        </th:block>
+    </select>
+
+    <button>Convert</button>
+</form>
+
+<div th:object="${moneyResult}">
+    <p th:text="@{'Result: ' + ${moneyResult.amount} + ' ' + ${moneyResult.fromCode} + ' = ' + ${moneyResult.moneyResult} + ' ' + ${moneyResult.toCode}}"></p>
+</div>
+
+</body>
+
+</html>

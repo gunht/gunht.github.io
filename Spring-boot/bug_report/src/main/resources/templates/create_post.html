@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{/layout/layout :: main-fragment(
+                                                ~{:: title},
+                                                'short-header',
+                                                ~{:: #main-content},
+                                                ~{:: #js-resources}
+                                               )}">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Post</title>
+</head>
+<body>
+
+<main id="main-content">
+    <div class="container mt-3">
+        <form th:if="${postId} == null" th:action="@{/create-post/save}" th:object="${createPostReq}" method="post" enctype="multipart/form-data">
+            <div class="form-group row">
+                <label for="title" class="col-sm-2 col-form-label">Title</label>
+                <input type="text" class="form-control" id="title" th:field="*{title}" required>
+            </div>
+            <div class="form-group row">
+                <label for="content" class="col-sm-2 col-form-label">Content</label>
+                <textarea class="form-control" rows="10" id="content" th:field="*{content}" required></textarea>
+            </div>
+            <div class="form-group row">
+                <div class="col border">
+                    <p>
+                        <img alt="Image Preview" class="preview-Img" id="thumbnail0" th:src="@{${createPostReq.getPrImage1()}}">
+                    </p>
+                    <p>
+                        <label>Image #1</label>
+                    </p>
+                    <p>
+                        <input type="file" name="extraImage1" class="extraImage" accept="image/png, image/jpeg">
+                    </p>
+                </div>
+
+                <div class="col border ml-1 mr-1">
+                    <p>
+                        <img alt="Image Preview" class="preview-Img" id="thumbnail1" th:src="@{${createPostReq.getPrImage2()}}">
+                    </p>
+                    <p>
+                        <label>Image #2</label>
+                    </p>
+                    <p>
+                        <input type="file" name="extraImage2" class="extraImage" accept="image/png, image/jpeg">
+                    </p>
+                </div>
+
+                <div class="col border">
+                    <p>
+                        <img alt="Image Preview" class="preview-Img" id="thumbnail2" th:src="@{${createPostReq.getPrImage3()}}">
+                    </p>
+                    <p>
+                        <label>Image #3</label>
+                    </p>
+                    <p>
+                        <input type="file" name="extraImage3" class="extraImage" accept="image/png, image/jpeg">
+                    </p>
+                </div>
+            </div>
+            <div class="form-group row mt-3">
+                <button class="btn btn-primary" type="submit">Save</button>
+            </div>
+        </form>
+        <form th:if="${postId} != null" th:action="@{/create-post/save/{id}(id=${postId})}" th:object="${createPostReq}" method="post" enctype="multipart/form-data">
+            <div sec:authorize="hasRole('ADMIN')" class="form-group row align-items-center">
+                <th:block th:each="st:${allStatus}">
+                    <input type="radio" name="status" th:field="*{status}" th:text="${st.name}" th:value="${st.id}">
+                    <span class="mr-3"></span>
+                </th:block>
+            </div>
+            <div class="form-group row">
+                <label for="title" class="col-sm-2 col-form-label">Title</label>
+                <input type="text" class="form-control" id="title" th:field="*{title}" required>
+            </div>
+            <div class="form-group row">
+                <label for="content" class="col-sm-2 col-form-label">Content</label>
+                <textarea class="form-control" rows="10" id="content" th:field="*{content}" required></textarea>
+            </div>
+            <div class="form-group row">
+                <div class="col border">
+                    <p>
+                        <img alt="Image Preview" class="preview-Img" id="thumbnail0" th:src="@{${createPostReq.getPrImage1()}}">
+                    </p>
+                    <p>
+                        <label>Image #1</label>
+                    </p>
+                    <p>
+                        <input type="file" name="extraImage1" class="extraImage" accept="image/png, image/jpeg">
+                    </p>
+                </div>
+
+                <div class="col border ml-1 mr-1">
+                    <p>
+                        <img alt="Image Preview" class="preview-Img" id="thumbnail1" th:src="@{${createPostReq.getPrImage2()}}">
+                    </p>
+                    <p>
+                        <label>Image #2</label>
+                    </p>
+                    <p>
+                        <input type="file" name="extraImage2" class="extraImage" accept="image/png, image/jpeg">
+                    </p>
+                </div>
+
+                <div class="col border">
+                    <p>
+                        <img alt="Image Preview" class="preview-Img" id="thumbnail2" th:src="@{${createPostReq.getPrImage3()}}">
+                    </p>
+                    <p>
+                        <label>Image #3</label>
+                    </p>
+                    <p>
+                        <input type="file" name="extraImage3" class="extraImage" accept="image/png, image/jpeg">
+                    </p>
+                </div>
+            </div>
+            <div class="form-group row mt-3">
+                <button class="btn btn-primary" type="submit">Update</button>
+            </div>
+        </form>
+    </div>
+</main>
+
+</body>
+</html>

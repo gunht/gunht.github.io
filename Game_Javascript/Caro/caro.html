@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cờ Caro</title>
+    <style>
+        #canvas {
+            position: absolute;
+            top: 0;
+            bottom: 5;
+            left: 0;
+            right: 5;
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="canvas" style="background-color:#DDDDDD"></canvas>
+
+    <script>
+        const canvas = document.getElementById("canvas");
+        const c = canvas.getContext('2d');
+
+        canvas.width = innerWidth;
+        canvas.height = innerHeight;
+
+
+        class Board {
+            constructor(cellWidth, row, col) {
+                this.cellWidth = cellWidth;
+                this.row = row;
+                this.col = col;
+                //Bổ xung margin cho tổng quát hơn
+                this.marginTop = 100;
+                this.marginLeft = 5;
+                this.marginBottom = 5;
+                this.marginRight = 5;
+                canvas.width = this.col * this.cellWidth + this.marginLeft + this.marginRight;
+                canvas.height = this.row * this.cellWidth + this.marginTop + this.marginBottom;
+
+                this.data = [];
+                this.create2DArray();
+                this.Xturn = true;
+            }
+
+            create2DArray() {
+                // Loop to create 2D array using 1D array 
+                for (let i = 0; i < this.row; i++) {
+                    this.data[i] = new Array(this.col);
+                    this.data[i].fill(0, 0);
+                }
+
+            }
+
+            //Vẽ lại 
+            drawGrid() {
+                c.beginPath()
+                c.lineWidth = 2;
+                c.strokeStyle = '#000000';
+                c.moveTo(this.marginLeft, this.marginTop);
+                c.lineTo(this.marginLeft + this.col * this.cellWidth, this.marginTop);
+
+                c.moveTo(this.marginLeft, this.marginTop + this.row * this.cellWidth);
+                c.lineTo(this.marginLeft + this.col * this.cellWidth, this.marginTop + this.row * this.cellWidth);
+
+                c.moveTo(this.marginLeft, this.marginTop);
+                c.lineTo(this.marginLeft, this.marginTop + this.row * this.cellWidth);
+
+                c.moveTo(this.marginLeft + this.col * this.cellWidth, this.marginTop);
+                c.lineTo(this.marginLeft + this.col * this.cellWidth, this.marginTop + this.row * this.cellWidth);
+
+                c.stroke();
+                c.closePath();
+                // set line color
+                // Vẽ kẻ ngang
+                c.lineWidth = 1;
+                c.strokeStyle = '#888888';
+                for (let i = 0; i < this.row + 1; i++) {
+                    c.moveTo(this.marginLeft, this.marginTop + i * this.cellWidth);
+                    c.lineTo(this.marginLeft + this.col * this.cellWidth, this.marginTop + i * this.cellWidth);
+                }
+
+                //Vẽ kẻ dọc
+                for (let j = 0; j < this.col + 1; j++) {
+                    c.moveTo(this.marginLeft + j * this.cellWidth, this.marginTop);
+                    c.lineTo(this.marginLeft + j * this.cellWidth, this.marginTop + this.row * this.cellWidth);
+                }
+                c.stroke();
+                c.closePath();
+            }
+            mouseClick() {
+                let x = event.offsetX;
+                let y = event.offsetY;
+
+                let i = Math.floor((y - this.marginTop) / this.cellWidth);
+                let j = Math.floor((x - this.marginLeft) / this.cellWidth);
+
+                if (i >= 0 && j >= 0 && this.data[i][j] === 0) {
+                    if (this.Xturn) {
+                        this.data[i][j] = 1;
+                    } else {
+                        this.data[i][j] = 2;
+                    }
+                    this.Xturn = !this.Xturn;
+                }
+            }
+            drawXO() {
+                let count = 0;
+                for (let i in this.data) {
+                    for (let j in this.data[i]) {
+                        let x = this.marginLeft + this.cellWidth / 2 + j * this.cellWidth;
+                        let y = this.marginTop + this.cellWidth / 2 + i * this.cellWidth;
+                        if (this.data[i][j] == 1) {
+                            c.beginPath();
+                            c.lineWidth = 5;
+                            c.strokeStyle = "blue";
+                            c.moveTo(x + 15, y - 15);
+                            c.lineTo(x - 15, y + 15);
+                            c.moveTo(x - 15, y - 15);
+                            c.lineTo(x + 15, y + 15);
+                            c.stroke();
+                            c.closePath();
+                            this.checkWin(i, j);
+                        } else if (this.data[i][j] == 2) {
+                            c.beginPath();
+                            c.lineWidth = 5;
+                            c.strokeStyle = "red";
+                            c.arc(x, y, 15, 0, Math.PI * 2);
+                            c.stroke();
+                            c.closePath();
+                            this.checkWin(i, j);
+                        }
+                    }
+                }
+            }
+
+            checkWin(row, col) {
+                row = Number(row);
+                col = Number(col);
+                let checkTime = 5;
+                let checkTimeCheo2 = 5;
+                if (this.row - row <= 5) {
+                    checkTime = this.row - row;
+                }
+                if (row <= 5) {
+                    checkTimeCheo2 = row;
+                }
+
+                let countXdoc = 0;
+                let countXngang = 0;
+                let countXcheo1 = 0;
+                let countXcheo2 = 0;
+
+                let countOdoc = 0;
+                let countOngang = 0;
+                let countOcheo1 = 0;
+                let countOcheo2 = 0;
+
+
+
+                //check ngang
+                for (let x = 0; x < 5; x++) {
+                    if (this.data[row][col + x] == 1) {
+                        countXngang++;
+                    } else if (this.data[row][col + x] == 2) {
+                        countOngang++;
+                    }
+                }
+
+                //check dọc
+                for (let x = 0; x < checkTime; x++) {
+                    if (this.data[row + x][col] == 1) {
+                        countXdoc++;
+                    } else if (this.data[row + x][col] == 2) {
+                        countOdoc++;
+                    }
+                }
+
+                //check chéo1
+                for (let x = 0; x < checkTime; x++) {
+                    if (this.data[row + x][col + x] == 1) {
+                        countXcheo1++;
+                    } else if (this.data[row + x][col + x] == 2) {
+                        countOcheo1++;
+                    }
+                }
+
+                //check chéo2
+                for (let x = 0; x <= checkTimeCheo2; x++) {
+                    if (this.data[row - x][col + x] == 1) {
+                        countXcheo2++;
+                    } else if (this.data[row - x][col + x] == 2) {
+                        countOcheo2++;
+                    }
+                }
+
+                //Báo win
+                if (countXdoc >= 5 ||
+                    countXngang >= 5 ||
+                    countXcheo1 >= 5 ||
+                    countXcheo2 >= 5) {
+                    c.font = "30px Georgia";
+                    c.fillText("X Win", canvas.width / 3 + 10, this.marginTop / 2 + 10)
+                }
+                if (countOdoc >= 5 ||
+                    countOngang >= 5 ||
+                    countOcheo1 >= 5 ||
+                    countOcheo2 >= 5) {
+                    c.font = "30px Georgia";
+                    c.fillText("O Win", canvas.width / 3 + 10, this.marginTop / 2 + 10)
+                }
+
+            }
+        }
+
+        let board = new Board(50, 7, 6);
+
+        canvas.addEventListener("click", (event) => {
+            board.mouseClick(event);
+        }, false)
+
+        function animate() {
+            requestAnimationFrame(animate);
+            c.clearRect(0, 0, canvas.width, canvas.height);
+            board.drawXO();
+            board.drawGrid();
+        }
+
+        animate();
+    </script>
+</body>
