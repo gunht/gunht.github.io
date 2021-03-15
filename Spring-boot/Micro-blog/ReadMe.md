@@ -3,6 +3,71 @@
 2. login using 1 out of 6 available accounts in user.sql
 and you can add new posts, new comments, also can view others' posts and comment on their posts
 (Ex: email: 'bob@gmail.com', pass: 'abc')
+```
+.
+├───java
+│   └───vn
+│       └───techmaster
+│           └───blog
+│               │   BlogApplication.java
+│               │
+│               ├───controller
+│               │   │   CommentController.java
+│               │   │   HomeController.java
+│               │   │   PostController.java
+│               │   │   Route.java
+│               │   │
+│               │   └───request
+│               │           LoginRequest.java
+│               │
+│               ├───DTO
+│               │       UserInfo.java
+│               │       UserMapper.java
+│               │
+│               ├───model
+│               │       Comment.java
+│               │       Post.java
+│               │       Tag.java
+│               │       User.java
+│               │
+│               ├───repository
+│               │       CommentRepository.java
+│               │       PostRepository.java
+│               │       TagRepository.java
+│               │       UserRepository.java
+│               │
+│               └───service
+│                       AuthenException.java
+│                       AuthenService.java
+│                       CommentService.java
+│                       IAuthenService.java
+│                       ICommentService.java
+│                       IPostService.java
+│                       ITagService.java
+│                       PostService.java
+│                       TagService.java
+│
+└───resources
+    │   application.properties
+    │   tag.sql
+    │   user.sql
+    │
+    └───templates
+        │   add.html
+        │   allpost.html
+        │   edit.html
+        │   home.html
+        │   layout.html
+        │   login.html
+        │   page.html
+        │   posts.html
+        │
+        ├───fragment
+        │       header.html
+        │
+        └───layout
+                layout.html
+```
 
 # Lập trình tại lớp 180 phút: ứng dụng Micro Blog
 
