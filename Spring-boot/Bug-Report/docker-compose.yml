@@ -10,7 +10,7 @@ services:
       - MYSQL_DATABASE=bug_report
     volumes:
       - /var/lib/mysql
-
+      - ./bug_report.sql:/docker-entrypoint-initdb.d/init.sql
   web:
     image: bug_report
     ports:
